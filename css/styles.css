@@ -1,0 +1,99 @@
+div#bandeau {
+	width:900px;
+	height:100px;
+	vertical-align: middle;
+	float: none;
+
+	}
+div#presentation {
+	width:900px;
+	height:30px;
+	vertical-align: middle;
+
+	
+	}	
+div#pied_page {
+	clear: both;
+	width: 900px;
+	height: 1px;
+	
+	}
+div#espace {
+	float:left;
+	width:15px;
+	height:120px;
+		}	
+div#espace1 {
+	float:left;
+	width:240px;
+	height:120px;
+}
+div#espace2 {
+	float:left;
+	width:200px;
+	height:120px;
+}
+
+
+div#espaceh {
+	width:900px;
+	height:15px;
+	clear: none;
+	float: left;
+}
+
+div#espacei {
+	width:450px;
+	height:15px;
+	clear: none;
+	float: left;
+}
+
+div#menu4 {
+	float:left;
+	width:435px;
+	height:274px;
+	background-color:#FFF;
+	border: thin solid #BBCCD3;
+	
+	}
+	
+div#menu3 {
+	float:left;
+	width:430px;
+	height:126px;
+	background-color:#FFF;
+	border: thin solid #BBCCD3;
+	
+	}
+div#menu2 {
+	float:left;
+	width:425px;
+	height:126px;
+	background-color:#FFF;
+	border: thin solid #bbccd3;
+	}
+div {
+	
+	margin: auto;
+
+	}
+div#menu1 {
+	float:left;
+	width:430px;
+	height:100px;
+	margin-left: auto;
+	background-color:#FFF;
+	border: thin solid #bbccd3;
+
+	
+	}
+.blanc {
+	color: #FFF;
+}
+.maj {
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: italic;
+	color: #3386A2;
+	font-size: xx-small;
+}

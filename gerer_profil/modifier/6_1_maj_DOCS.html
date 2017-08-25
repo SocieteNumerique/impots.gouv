@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style>
+#infobulle_adresse 
+	{
+	position: absolute;
+	left: 290px;
+	top: 169px;
+	}
+#infobulle_mdp 
+	{
+	position: absolute;
+	left: 245px;
+	top: 307px;
+	}
+#infobulle_numtel 
+	{
+	position: absolute;
+	left: 306px;
+	top: 482px;
+	}
+#infobulle_mesdocs 
+	{
+	position: absolute;
+	left: 494px;
+	top: 138px;
+	}
+#infobulle_madecla 
+	{
+	position: absolute;
+	left: 759px;
+	top: 66px;
+	}
+#infobulle_mesavisIR 
+	{
+	position: absolute;
+	left: 786px;
+	top: 125px;
+	}
+#infobulle_mesavisIL 
+	{
+	position: absolute;
+	left: 756px;
+	top: 163px;
+	}
+#infobulle_pref 
+	{
+	position: absolute;
+	left: 585px;
+	top: 409px;
+	}
+#infobulle_adresse_actuelle 
+	{
+	position: absolute;
+	left: 520px;
+	top: 218px;
+	}
+</style>
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<p><img src="img/majDOCS_1.png" usemap="#Map" border="0" />
+</p>
+
+<map name="Map" id="Map">
+
+<area shape="circle" href="#" coords="274,205,12" onmouseover="afficher_infobulle('infobulle_adresse')" onmouseout="cacher_infobulle('infobulle_adresse')"/>
+<area shape="circle" href="#" coords="499,245,12" onmouseover="afficher_infobulle('infobulle_adresse_actuelle')" onmouseout="cacher_infobulle('infobulle_adresse_actuelle')" />
+<area shape="circle" href="#" coords="223,333,12" onmouseover="afficher_infobulle('infobulle_mdp')" onmouseout="cacher_infobulle('infobulle_mdp')"/>
+<area shape="circle" href="#" coords="284,513,12" onmouseover="afficher_infobulle('infobulle_numtel')" onmouseout="cacher_infobulle('infobulle_numtel')"/>
+<area shape="circle" href="#" coords="849,205,12" onmouseover="afficher_infobulle('infobulle_mesdocs')" onmouseout="cacher_infobulle('infobulle_mesdocs')"/>
+<area shape="circle" href="#" coords="945,283,12" onmouseover="afficher_infobulle('infobulle_madecla')" onmouseout="cacher_infobulle('infobulle_madecla')"/>
+<area shape="circle" href="#" coords="966,321,12" onmouseover="afficher_infobulle('infobulle_mesavisIR')" onmouseout="cacher_infobulle('infobulle_mesavisIR')"/>
+<area shape="circle" href="#" coords="939,359,12" onmouseover="afficher_infobulle('infobulle_mesavisIL')" onmouseout="cacher_infobulle('infobulle_mesavisIL')"/>
+<area shape="circle" href="#" coords="951,468,12" onmouseover="afficher_infobulle('infobulle_pref')" onmouseout="cacher_infobulle('infobulle_pref')"/>
+   <area shape="rect" coords="722,266,771,373" href="6_2_maj_DOCS.html" />
+   
+</map>
+
+<div id="infobulle_adresse" class="infobulle" > <img src="img/gmp_aide1_adresse.png" alt="" />
+</div>
+<div id="infobulle_adresse_actuelle" class="infobulle"><img src="img/infobulle_AE_actuelle.png" alt=""/></div>
+<div id="infobulle_mdp" class="infobulle"> <img src="img/gmp_aide2_mdp.png" alt="" />
+</div>
+<div id="infobulle_numtel" class="infobulle"> <img src="img/gmp_aide3_numtel.png" alt="" />
+</div>
+<div id="infobulle_mesdocs" class="infobulle"> <img src="img/gmp_aide4_mesdocs.png" alt="" />
+</div>
+<div id="infobulle_madecla" class="infobulle"> <img src="img/gmp_aide5_madecla.png" alt="" />
+</div>
+<div id="infobulle_mesavisIR" class="infobulle"> <img src="img/gmp_aide6_mesavisIR.png" alt="" />
+</div>
+<div id="infobulle_mesavisIL" class="infobulle"> <img src="img/gmp_aide7_mesavisIL.png" alt="" />
+</div>
+<div id="infobulle_pref" class="infobulle"> <img src="img/gmp_aide8_pref.png" alt="" />
+</div>
+
+<script src="../../js/infobulle.js">
+</script>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="EditRegion2" --><div id="option_cplt">
+<div id="cplt">
+<div id="texte_cplt"><strong><em>Modifier ses documents</em></strong><br />
+    L'usager peut choisir le &quot;zéro papier&quot; pour :<br />
+    - sa déclaration de revenus,<br />
+    - ses avis d'impôt sur le revenu,<br />
+  - ses avis d'impôts locaux.</div></div>
+</div><!-- InstanceEndEditable -->  
+
+</body>
+<!-- InstanceEnd --></html>

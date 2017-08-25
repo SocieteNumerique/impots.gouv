@@ -1,0 +1,33 @@
+#accueil {
+	position:absolute;
+	left:851px;
+	top:31px;
+	width:69px;
+	height:73px;
+	z-index:2;
+}
+p {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	color: #F30;
+}
+a {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	color: #F30;
+	text-decoration: none;
+}
+a:hover {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	color: #F30;
+	text-decoration: underline;
+	font-weight: bold;
+}
+ul {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	color: #F30;
+	list-style-type: disc;
+}

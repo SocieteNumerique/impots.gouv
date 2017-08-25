@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+/*style applique a modele_commun_cplt*/
+#retour
+{
+	position: absolute;
+	left: 1173px;
+	top: 13px;
+	width: 82px;
+	height: 75px;
+	z-index: 2;
+}
+
+#option_cplt
+{
+	position: absolute;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11pt;
+	width: 295px;
+	left: 940px;
+	top: 680px;
+	color: black;
+	border: solid;
+	border-color: #FF6600;
+	background-color: #FFF;
+	padding: 5px 5px 5px 15px;
+}	
+
+#cplt
+{
+	background: url('../img/infoI.png') no-repeat;
+	background-position:left center;
+	float:left;
+	width: 280px;
+	padding: 10px 10px 10px 10px;
+}
+
+#texte_cplt
+{
+	width: 265px;
+	margin-left: 15px;
+	padding: 5px;
+}
+
+.bouton_retour
+{
+	background-color: white;
+	border-radius: 15%;
+	cursor: pointer;
+	width: 90px;
+	height: 90px;
+}

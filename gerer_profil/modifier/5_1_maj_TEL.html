@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style>
+#infobulle_adresse 
+	{
+	position: absolute;
+	left: 328px;
+	top: 189px;
+	}
+#infobulle_mdp 
+	{
+	position: absolute;
+	left: 275px;
+	top: 323px;
+	}
+#infobulle_numtel 
+	{
+	position: absolute;
+	left: 336px;
+	top: 502px;
+	}
+#infobulle_mesdocs 
+	{
+	position: absolute;
+	left: 509px;
+	top: 158px;
+	}
+#infobulle_madecla 
+	{
+	position: absolute;
+	left: 783px;
+	top: 81px;
+	}
+#infobulle_mesavisIR 
+	{
+	position: absolute;
+	left: 807px;
+	top: 135px;
+	}
+#infobulle_mesavisIL 
+	{
+	position: absolute;
+	left: 780px;
+	top: 173px;
+	}
+#infobulle_pref 
+	{
+	position: absolute;
+	left: 606px;
+	top: 418px;
+	}
+#infobulle_adresse_actuelle 
+	{
+	position: absolute;
+	left: 545px;
+	top: 228px;
+	}
+</style>
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<p><img src="img/majTEL_1.png" usemap="#Map" border="0" />
+</p>
+<map name="Map" id="Map">
+	  	
+    <area shape="circle" href="#" coords="305,218,12" onmouseover="afficher_infobulle('infobulle_adresse')" onmouseout="cacher_infobulle('infobulle_adresse')"/>
+<area shape="circle" href="#" coords="527,257,12" onmouseover="afficher_infobulle('infobulle_adresse_actuelle')" onmouseout="cacher_infobulle('infobulle_adresse_actuelle')" />
+<area shape="circle" href="#" coords="255,344,12" onmouseover="afficher_infobulle('infobulle_mdp')" onmouseout="cacher_infobulle('infobulle_mdp')"/>
+<area shape="circle" href="#" coords="316,520,12" onmouseover="afficher_infobulle('infobulle_numtel')" onmouseout="cacher_infobulle('infobulle_numtel')"/>
+<area shape="circle" href="#" coords="872,218,12" onmouseover="afficher_infobulle('infobulle_mesdocs')" onmouseout="cacher_infobulle('infobulle_mesdocs')"/>
+<area shape="circle" href="#" coords="966,295,12" onmouseover="afficher_infobulle('infobulle_madecla')" onmouseout="cacher_infobulle('infobulle_madecla')"/>
+<area shape="circle" href="#" coords="987,333,12" onmouseover="afficher_infobulle('infobulle_mesavisIR')" onmouseout="cacher_infobulle('infobulle_mesavisIR')"/>
+<area shape="circle" href="#" coords="960,369,12" onmouseover="afficher_infobulle('infobulle_mesavisIL')" onmouseout="cacher_infobulle('infobulle_mesavisIL')"/>
+<area shape="circle" href="#" coords="971,477,12" onmouseover="afficher_infobulle('infobulle_pref')" onmouseout="cacher_infobulle('infobulle_pref')"/>
+ 
+    <area shape="rect" coords="267,560,416,604" href="5_2_maj_TEL.html" />   
+    <area shape="rect" coords="548,559,697,603" href="5_2_maj_TEL.html" />   
+   <area shape="rect" coords="236,572,247,585" href="" onclick="window.open('img/liste_prefixe.png','_blank','width=250,height=400,top=200,left=250')"/>
+   <area shape="rect" coords="517,572,528,585" href="" onclick="window.open('img/liste_prefixe.png','_blank','width=250,height=400,top=200,left=250')"/>
+</map>
+
+<div id="infobulle_adresse" class="infobulle"> <img src="img/gmp_aide1_adresse.png" alt="" />
+</div>
+<div id="infobulle_adresse_actuelle" class="infobulle"><img src="img/infobulle_AE_actuelle.png" alt=""/></div>
+<div id="infobulle_mdp" class="infobulle"> <img src="img/gmp_aide2_mdp.png" alt="" />
+</div>
+<div id="infobulle_numtel" class="infobulle"> <img src="img/gmp_aide3_numtel.png" alt="" />
+</div>
+<div id="infobulle_mesdocs" class="infobulle"> <img src="img/gmp_aide4_mesdocs.png" alt="" />
+</div>
+<div id="infobulle_madecla" class="infobulle"> <img src="img/gmp_aide5_madecla.png" alt="" />
+</div>
+<div id="infobulle_mesavisIR" class="infobulle"> <img src="img/gmp_aide6_mesavisIR.png" alt="" />
+</div>
+<div id="infobulle_mesavisIL" class="infobulle"> <img src="img/gmp_aide7_mesavisIL.png" alt="" />
+</div>
+<div id="infobulle_pref" class="infobulle"> <img src="img/gmp_aide8_pref.png" alt="" />
+</div>
+<script src="../../js/infobulle.js">
+</script>
+
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="EditRegion2" --><div id="option_cplt">
+<div id="cplt">
+<div id="texte_cplt"><strong><em>Modifier ses numéros de téléphone</em></strong><br>
+L'usager peut renseigner, modifier ou supprimer ses numéros de téléphone fixe et/ou portable en intervenant directement dans les champs correspondants.<br />
+ Pour modifier le préfixe de numérotation, cliquer sur <img src="img/fleche_liste.png" /> .</div></div>
+</div><!-- InstanceEndEditable -->  
+
+</body>
+<!-- InstanceEnd --></html>

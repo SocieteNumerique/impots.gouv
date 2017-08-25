@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="pas">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Cap Numérique">
+        <title>Gérer mon prélèvement à la source</title>
+        <link rel="stylesheet" href="css/PAS.css" />
+        <link rel="stylesheet" href="css/bootstrap-accessibility.css">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv-3.7.2.min.js"></script>
+            <script src="js/respond-1.4.2.min.js"></script>
+        <![endif]-->
+
+
+    </head>
+
+    <body ng-controller="MainCtrl">
+
+        <!-- Menu maquette -->
+        <!--<div id="menuMaquette">
+			<a href="#" onclick="location.reload(true);">&orarr; Recharger la maquette</a>
+            <label>Modulation à la baisse <input type="checkbox" ng-model="sensModul"></label>-->
+        <!--<br> <label>Modulation dépassant la limite<input type="checkbox" ng-model="depasModul"></label>-->
+        <!--<br> <label>Modifier le texte de la maquette <input type="checkbox" ng-model="contentEditable"></label>
+			<h4>&gtcc;MENU MAQUETTE</h4>
+        </div>-->
+
+        <!--
+        Header
+        *************************************************************************************** -->
+        <header class="header hidden-print">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-8" id="logo">
+                        <a href="indexAide.html" title="Accueil">
+                        </a>
+                    </div>
+
+                    <!-- IDENTIFICATION-->
+                    <div class="col-md-4 text-right bloc-identification">
+                        <p>
+                            Monsieur Michel MARTIN<br> Numéro fiscal : 1234567890123<br>
+                            <span class="text-muted">Dernière connexion le
+                                27 juillet 2016
+                                à
+                                16:12:05
+                            </span>
+                        </p>
+                        <p>
+                            <a href="indexAide.html">
+                                <i class="icon-deconnexion"></i> Déconnexion
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Fil d'Arianne -->
+        <ol class="breadcrumb hidden-print container">
+            <li><a href="espacepart.html">Espace particulier</a></li>
+            <li class="active">Gérer mon prélèvement à la source</li>
+        </ol>
+
+        <!--
+        Contenu
+        *************************************************************************************** -->
+        <div class="container">
+            <div class="row">
+
+                <!-- Colonne droite en premier pour mobile first -->
+                <div class="col-md-8 col-md-push-4" role="region" id="modifications_pas">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading">
+                                <h2>{{titre}}</h2>
+                            </div>
+                            <div class="panel-body">
+
+                                <!-- Etapes de navigation -->
+                                <ul class="nav nav-pills nav-wizard transition-fade" ng-show="pap.length">
+                                    <li ng-repeat="step in pap" ng-class="{'active':stepCourant>=$index}">
+                                        <div class="nav-wedge" ng-if="!$first"></div>
+                                        <a href="#" data-toggle="tab">{{step}}</a>
+                                        <div class="nav-arrow" ng-if="!$last"></div>
+                                    </li>
+                                </ul>
+
+                                <!-- Bloc nature de l'événement -->
+                                <div class="transition-fade" ng-show="etape=='accueil'">
+                                    <p>Ici, vous pouvez gérer votre prélèvement à la source&nbsp;: taux, acomptes, coordonnées bancaires.</p>
+                                </div>
+
+                                <!-- Bloc nature de l'événement -->
+                                <div class="transition-fade" ng-show="etape=='chgt_sit'">
+
+                                    <p>Votre dernière situation connue est {{sitfam}}<strong>{{historique[2019].sitfam}}</strong>.</p>
+
+                                    <p>Veuillez sélectionner le changement de situation de famille qui vous concerne :</p>
+
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-default" ng-click="choixChgtSit('mariage')" ng-if="historique[2019].sitfam =='célibataire' || historique[2019].sitfam =='veuf' || historique[2019].sitfam =='divorcé ou séparé'">
+                                    <input type="radio" >Mariage
+                                </label>
+                                        <label class="btn btn-default" ng-click="choixChgtSit('pacs')" ng-if="historique[2019].sitfam =='célibataire' || historique[2019].sitfam =='veuf' || historique[2019].sitfam =='divorcé ou séparé'">
+                                    <input type="radio" >PACS
+                                </label>
+                                        <label class="btn btn-default" ng-if="historique[2019].sitfam =='marié' || historique[2019].sitfam =='pacsé'" ng-click="choixChgtSit('separation')">
+                                    <input type="radio" >Séparation
+                                </label>
+                                        <label class="btn btn-default" ng-if="historique[2019].sitfam =='marié' || historique[2019].sitfam =='pacsé'" ng-click="choixChgtSit('deces')">
+                                    <input type="radio" >Décès
+                                </label>
+
+                                    </div>
+
+                                    <p>
+                                        <!-- Formulaire mariage -->
+                                        <form class="form-horizontal transition-fade" ng-show="afficherSubform">
+                                            <div class="form-group">
+                                                <label for="sitfam_m_date" class="col-md-6 control-label" ng-switch on="data[2019].sitfam">
+                                            Date
+                                            <span ng-switch-when="marié">du mariage</span>
+                                            <span ng-switch-when="pacsé">du PACS</span>
+                                            <span ng-switch-when="divorcé/séparé">du divorce ou de la séparation</span>
+                                            <span ng-switch-when="veuf">du décès de Monsieur Martin</span>
+                                        </label>
+                                                <div class="col-md-3">
+                                                    <input type="date" max="2019-12-31" min="2019-01-01" class="form-control" id="sitfam_m_date" placeholder="ex : 01/01/2019">
+                                                </div>
+                                            </div>
+                                            <div class="form-group" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)!=-1">
+                                                <label for="sitfam_m_date" class="col-md-6 control-label" ng-switch on="data[2019].sitfam">
+                                            Nom et prénom du
+                                            <span ng-switch-when="marié">conjoint</span>
+                                            <span ng-switch-when="pacsé">partenaire de PACS</span>
+                                        </label>
+                                                <div class="col-md-3">
+                                                    <input type="text" class="form-control" id="sitfam_m_date" placeholder="ex : Michel MARTIN">
+                                                </div>
+                                            </div>
+                                            <div class="form-group" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)!=-1">
+                                                <label for="sitfam_m_date" class="col-md-6 control-label" ng-switch on="data[2019].sitfam">
+                                            Numéro fiscal du
+                                            <span ng-switch-when="marié">conjoint</span>
+                                            <span ng-switch-when="pacsé">partenaire de PACS</span>
+                                        </label>
+                                                <div class="col-md-3">
+                                                    <input type="number" class="form-control" id="sitfam_m_date" placeholder="ex : 1234567890123">
+                                                </div>
+                                            </div>
+                                            <div class="form-group" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)!=-1">
+                                                <label for="sitfam_m_date" class="col-md-6 control-label" ng-switch on="data[2019].sitfam">
+                                            Date de naissance du
+                                            <span ng-switch-when="marié">conjoint</span>
+                                            <span ng-switch-when="pacsé">partenaire de PACS</span>
+                                        </label>
+                                                <div class="col-md-3">
+                                                    <input type="date" class="form-control" id="sitfam_m_date" placeholder="ex : 01/01/2019">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="text-right">
+                                                <a class="btn btn-primary" ng-click="progresser(1)">Continuer</a>
+                                            </div>
+                                        </form>
+                                    </p>
+                                </div>
+
+
+                                <!-- Bloc situation du foyer -->
+                                <div class="transition-fade" ng-show="etape=='sitfoyer'">
+
+                                    <!-- Récapitulatif -->
+                                    <div class="transition-fade" ng-show="!afficherSubform">
+                                        <p>En {{anneeSaisie}}, vous <span ng-if="anneeSaisie == '2019'">résidez</span><span ng-if="anneeSaisie != '2019'">résidiez</span> <strong>{{saisie.residence}}</strong>.</p>
+                                        <p>Vous aviez <strong>{{(saisie.nbPac + saisie.nbPacRa)}} personne<span ng-if="(saisie.nbPac + saisie.nbPacRa)>1">s</span> à charge ou rattachée<span ng-if="(saisie.nbPac + saisie.nbPacRa)>1">s</span></strong>.</p>
+                                        <!--   <p>Vous ne releviez pas d'une situation vous permettant de bénéficier d'une demi-part supplémentaire.</p> -->
+                                        <p ng-show="scenario=='modul_tx'">
+
+                                        </p>
+                                    </div>
+
+                                    <!-- Formulaire de modification de la situation du foyer -->
+                                    <div class="transition-fade" ng-show="afficherSubform">
+                                        <form class="form-horizontal">
+                                            <h3>Lieu de résidence</h3>
+
+                                            <div class="form-group col-md-12">
+                                                <label class="control-label">En {{anneeSaisie}}, vous <span ng-if="anneeSaisie != '2019'">résidiez</span><span ng-if="anneeSaisie == '2019'">résidez</span> </label>
+                                                <select ng-model="saisie.residence">
+                                            <option>en métropole</option>
+                                            <option>en Guadeloupe, Martinique ou à la Réunion</option>
+                                            <option>en Guyane ou à Mayotte</option>
+                                            <option>à l'étranger</option>
+                                        </select>
+                                            </div>
+
+                                            <h3 ng-if="!saisie.sitfam=='marié'">Parent isolé</h3>
+
+                                            <div class="checkbox" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)==-1">
+                                                <label>
+                                            <input type="checkbox" ng-model="saisie.codesSitPart['0at']"> Vous viviez seul(e) au 1er janvier {{anneeSaisie}} avec votre (ou vos) enfant(s) ou des personnes invalides recueillies sous votre toit
+                                        </label>
+                                            </div>
+
+                                            <h3>Situations particulières</h3>
+
+                                            <div class="checkbox" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)==-1">
+                                                <label>
+                                            <input type="checkbox" ng-model="saisie.codesSitPart['0bl']">
+                                                • Vous viviez seul(e) au 1er janvier 2015 et vous avez un enfant :<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- majeur ou marié/pacsé (ou mineur imposé en son nom propre) non rattaché à votre foyer ;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- décédé après l'âge de 16 ans ou par suite de faits de guerre.<br>
+                                                • Vous avez élevé cet enfant pendant au moins cinq années au cours desquelles vous viviez seul
+                                        </label>
+                                            </div>
+
+                                            <div class="checkbox" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)==-1">
+                                                <label>
+                                            <input type="checkbox" ng-model="saisie.codesSitPart['0bn']"> Vous avez une pension de veuve de guerre
+                                        </label>
+                                            </div>
+
+                                            <div class="checkbox" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)!=-1">
+                                                <label>
+                                            <input type="checkbox" ng-model="saisie.codesSitPart['0bp']"> Titulaire d'une pension (militaire, accident du travail) pour une invalidité d'au moins 40 % ou d'une carte d'invalidité d'au moins 80 %
+                                        </label>
+                                            </div>
+
+                                            <div class="checkbox" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)!=-1">
+                                                <label>
+                                            <input type="checkbox" ng-model="saisie.codesSitPart['0bf']"> Votre conjoint remplit ces conditions
+                                        </label>
+                                            </div>
+
+                                            <div class="checkbox" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)==-1">
+                                                <label>
+                                            <input type="checkbox" ng-model="saisie.codesSitPart['0bw']"> Vous avez plus de 74 ans et vous êtes titulaire de la carte du combattant ou d'une pension militaire d'invalidité ou de victime de guerre. <br>
+                                            Ou vous avez plus de 74 ans et votre conjoint décédé bénéficiait de la demi-part supplémentaire
+                                        </label>
+                                            </div>
+
+                                            <div class="checkbox" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)!=-1">
+                                                <label>
+                                            <input type="checkbox" ng-model="saisie.codesSitPart['0bs']"> L'un des deux déclarants, âgé de plus de 74 ans, est titulaire de la carte du combattant ou d'une pension militaire d'invalidité ou de victime de guerre
+                                        </label>
+                                            </div>
+
+                                            <div class="checkbox" ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)==-1">
+                                                <label>
+                                            <input type="checkbox" ng-model="saisie.codesSitPart['0bg']"> Vous avez une pension de veuve de guerre
+                                        </label>
+                                            </div>
+
+                                            <h3>Personnes à charge ou rattachées</h3>
+                                            <div class="form-group">
+                                                <label for="sitfoy_f" class="col-md-11 control-label">Nombre d'enfants non mariés de moins de 18 ans ou handicapés quel que soit leur âge</label>
+                                                <div class="col-md-1">
+                                                    <input type="text" class="form-control" ng-model="saisie.codesSitFoyer['0cf']">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sitfoy_g" class="col-md-11 control-label">Dont enfants titulaires de la carte d'invalidité</label>
+                                                <div class="col-md-1">
+                                                    <input type="text" class="form-control" ng-model="saisie.codesSitFoyer['0cg']">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sitfoy_h" class="col-md-11 control-label">Nombre d'enfants non mariés en résidence alternée de moins de 18 ans ou handicapés quel que soit l'âge</label>
+                                                <div class="col-md-1">
+                                                    <input type="text" class="form-control" ng-model="saisie.codesSitFoyer['0ch']">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sitfoy_i" class="col-md-11 control-label">Dont enfants en résidence alternée titulaires de la carte d'invalidité</label>
+                                                <div class="col-md-1">
+                                                    <input type="text" class="form-control" ng-model="saisie.codesSitFoyer['0ci']">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sitfoy_r" class="col-md-11 control-label">Nombre de personnes (autres que vos enfants) vivant sous votre toit et titulaires de la carte d'invalidité d'au moins 80 %</label>
+                                                <div class="col-md-1">
+                                                    <input type="text" class="form-control" ng-model="saisie.codesSitFoyer['0cr']">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sitfoy_j" class="col-md-11 control-label">Nombre d'enfants majeurs célibataires (ou veufs ou divorcés) sans enfant qui demandent leur rattachement</label>
+                                                <div class="col-md-1">
+                                                    <input type="text" class="form-control" ng-model="saisie.codesSitFoyer['0dj']">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sitfoy_n" class="col-md-11 control-label">Nombre d'enfants mariés/pacsés et d'enfants non mariés chargés de famille (y compris le conjoint et les enfants)</label>
+                                                <div class="col-md-1">
+                                                    <input type="text" class="form-control" ng-model="saisie.codesSitFoyer['0dn']">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <p class="text-right transition-fade">
+                                        <a class="btn btn-default" ng-show="!afficherSubform" ng-click="afficherSubform=true">Corriger ces informations</a>
+                                        <a class="btn btn-primary" ng-click="progresser(1)">Continuer</a>
+                                    </p>
+                                </div>
+
+
+                                <!-- Bloc revenus -->
+                                <div class="transition-fade" ng-show="etape=='revenus'">
+
+                                    <p ng-if="anneeSaisie != '2019'">Pour {{anneeSaisie}}, vos revenus <span ng-if="anneeSaisie == '2017'">pris en compte</span> s'élèvent à :</png-if>
+                                        <p ng-if="anneeSaisie == '2019'">Pour l'ensemble de l'année 2019, indiquez vos revenus prévisionnels :</p>
+                                        <form class="form-horizontal">
+                                            <div ng-repeat="cat in catRevenus">
+                                                <div class="form-group col-md-12" ng-repeat="code in saisie.codesSitRev | orderBy:code[0] | filter:{0:cat[0]}">
+                                                    <h3 ng-if="$first" class="text-right">{{cat[1]}}</h3>
+                                                    <label class="col-md-10 control-label"><strong>{{code[0]}}</strong> - {{code[1]}}</label>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" ng-model="code[2]">
+                                                    </div>
+                                                    <label class="col-md- control-label" ng-if="code[0]=='4BA'" data-toggle="modal" data-target="#modaleRF">
+                                                    <i class="icon-modifier icon-large"></i>
+                                                </label>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="well col-md-12" ng-if="anneeSaisie != '2017'">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="ex : 2DC, Revenu foncier..." ng-model="nouvCodeRev" typeahead="code as (code[0]+' - '+code[1]) for code in codesRev | filter:$viewValue | limitTo:8">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-default" ng-click="addCodeRev(nouvCodeRev)">Ajoutez un revenu</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="text-right" ng-if="anneeSaisie != '2017'">
+                                                <a>Afficher la déclaration complète</a>
+                                            </p>
+                                            <div class="text-right">
+                                                <a class="btn btn-primary" ng-click="progresser(1)">Continuer</a>
+                                            </div>
+                                        </form>
+                                </div>
+
+
+                                <!-- Bloc taux -->
+                                <div class="transition-fade" ng-show="etape=='taux'">
+                                    <div>
+                                        <h3>Mon nouveau taux de prèlèvement</h3>
+                                        <p>Au regard des éléments déclarés, votre nouveau taux de prélèvement <span ng-if="scenario=='chgt_sit'">applicable jusqu'au 31 août 2019 </span><span ng-if="scenario!='chgt_sit'">à la source </span>est de&nbsp;:
+                                            <span style="color:#0A5791;font-size:1.5em">{{data[2019].taux}}</span>
+                                        </p>
+                                        <p ng-show="optionIndiv && ['marié', 'pacsé'].indexOf(data[2019].sitfam)!=-1">Vous avez opté pour l'individualisation de votre taux, soit
+                                            <strong class="text-primary">{{data[2019].tauxIndivMonsieur}}</strong> pour Monsieur Martin et
+                                            <strong class="text-primary">{{data[2019].tauxIndivMadame}}</strong> pour Madame Martin.
+                                        </p>
+
+                                        <p ng-show="scenario=='chgt_sit'">À compter du 1<sup>er</sup> septembre, votre taux sera de&nbsp;: <span style="color:#0A5791;font-size:1.5em">9,7 %</span></p>
+                                    </div>
+
+                                    <div>
+                                        <h3>Mes nouveaux acomptes</h3>
+                                        <p>Vous avez déclaré des revenus soumis aux acomptes.
+                                        <strong>
+                                            <i class="icon-interrogation text-primary icon-bigger"
+                                                data-placement="left"
+                                                data-toggle="popover"
+                                                data-trigger="hover"
+                                                data-html="true"
+                                                title="Revenus soumis aux acomptes"
+                                                data-content="<p>Les revenus soumis aux acomptes sont les suivants&nbsp;:</p>
+                                                    <ul>
+                                                        <li>Revenus fonciers&nbsp;;</li>
+                                                        <li>Bénéfices industriels et commerciaux&nbsp;;</li>
+                                                        <li>Bénéfices non commerciaux&nbsp;;</li>
+                                                        <li>Bénéfices agricoles&nbsp;;</li>
+                                                        <li>Pensions alimentaires&nbsp;;</li>
+                                                        <li>Revenus étrangers versés par un débiteur établi hors de France&nbsp;;</li>
+                                                        <li>Rente viagère à titre onéreux.</li>
+                                                    </ul>"
+                                                ></i>
+                                        </strong></p>
+                                        <p>Compte tenu du nouveau taux de prélèvement calculé et en tenant compte des acomptes déjà payés, vos prélèvements seront les suivant jusqu'au 31 décembre 2019&nbsp;:</p>
+
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <td>Revenus fonciers</td>
+                                                <td>107 €</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <div ng-if="['marié', 'pacsé'].indexOf(data[2019].sitfam)!=-1 && scenario=='chgt_sit'">
+                                        <p>
+                                            <strong>Vous pouvez opter pour conserver chacun une imposition séparée pour l'année 2019.
+                                                <i class="icon-interrogation text-primary icon-bigger"
+                                                    data-placement="left"
+                                                    data-toggle="popover"
+                                                    data-trigger="hover"
+                                                    data-html="true"
+                                                    title="Option pour l'imposition séparée"
+                                                    data-content="<p>En choisissant l'imposition séparée, vous continuez à être considéré comme un célibataire jusqu’au 31 décembre.</p>
+                                                        <p>Votre taux actuel ou vos éventuels acomptes actuels (revenus fonciers, indépendants, pensions alimentaires…) continueront donc à s’appliquer jusqu’au 31 décembre.</p>
+                                                        <p>À compter du 1er janvier, ils seront automatiquement mis à jour par l'administration sur la base de votre nouvelle situation de famille.</p>
+                                                        <p>Pour information, moins d'un couple sur 4 choisit cette option.</p>"
+                                                ></i>
+                                            </strong>
+                                        </p>
+
+                                        <div class="switch">
+                                            <div>
+                                                <input class="curseur rond" name="retenue_indiv" id="retenue_indiv" type="checkbox" data-toggle="modal" data-target="#myModal">
+                                                <label for="retenue_indiv" class="pull-left"></label>
+                                                <span>
+                                                    <p>J'opte pour une <strong>imposition commune en 2019</strong>.
+                                                    Mon nouveau taux et mes éventuels acomptes seront appliqués à compter du 1er janvier 2020.
+                                                    <em>Ce choix s'applique également à mon conjoint.</em>
+                                                    </p>
+        	                                    </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-right">
+                                        <!--<a class="btn btn-primary" ng-click="progresser(1)">Continuer</a>-->
+
+                                        <button class="btn btn-default" ng-if="scenario=='modul_tx'">Conserver mon ancien taux</button>
+                                        <button class="btn btn-default" ng-if="scenario=='chgt_sit'">Annuler</button>
+                                        <button class="btn btn-primary" ng-click="finScenario()" ng-if="scenario=='chgt_sit'">Confirmer</button>
+                                        <button class="btn btn-primary" ng-click="finScenario()" ng-if="scenario=='modul_tx'">Confirmer la modulation</button>
+                                    </div>
+                                </div>
+
+                                <!-- Bloc gestion acomptes -->
+                                <div class="text-right" ng-show="scenario=='modul_acpt'">
+                                    <div id="btnAcomptes" class="panel">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#nouvAcompte">Créer un acompte</button>
+                                        <input class="curseur rond" name="trimestrialisation" id="trimestrialisation" type="checkbox" data-toggle="modal" data-target="#optTrim">
+                                        <label for="trimestrialisation"></label><span>Opter pour la trimestrialisation</span>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table summary="Le tableau expose les montants mensuels, ou trimestriels, de chaque catégorie d'acompte et les actions pouvant être exercées (suppression, modulation, voire report d'un acompte)" id="acomptes" class="table table-bordered table-condensed table-hover acomptes">
+                                            <thead>
+                                                <tr>
+                                                    <th>Catégorie d'acompte</th>
+                                                    <th ng-repeat="m in mois">
+                                                        {{m}}
+                                                    </th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="revenu in acomptesPrevus">
+                                                    <td>{{revenu.nature}}</td>
+                                                    <td ng-repeat="montant in revenu.acomptes track by $index">{{montant}}&nbsp;€</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#supAcompte">Supprimer</button>
+                                                        <button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#repAcompte" ng-if="revenu.nature!='Revenus fonciers'">Reporter</button>
+                                                        <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#augAcompte">Moduler</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Total</strong></td>
+                                                    <td ng-repeat="m in mois">
+                                                        <strong>{{getTotalAcomptes($index)}}&nbsp;€</strong>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="transition-fade" ng-show="etape=='taux'">
+                                </div>
+
+
+                                <!-- Bloc gestion coordonnées bancaires -->
+                                <div class="text-center transition-fade" ng-show="scenario=='chgt_banq'">
+
+                                    <div class="text-left iban_bic row">
+                                        <h3>Nouvelles coordonnées bancaires</h3>
+                                        <div class="col-md-12">
+                                            <form class="">
+                                                <div>
+                                                    <div class="form-group col-md-3">
+                                                        <select class="form-control" aria-label="Civilité">
+                                        								<option>Civilité</option>
+                                                        <option value="1">Madame</option>
+                                                        <option value="2">Monsieur</option>
+                                                        <option value="2">Madame ou Monsieur</option>
+                                                    </select>
+                                                    </div>
+                                                    <div class="form-group col-md-9">
+                                                        <input class="form-control" data-toggle="tooltip" data-placement="top" title="Nom et prénom du ou des titulaire(s) du compte" placeholder="Nom et prénom du ou des titulaire(s) du compte" arial-label="Nom et prénom du ou des titulaire(s) du compte">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="form-group col-md-3">
+                                                        <label><abbr title="International Bank Account Number&nbsp;: votre compte bancaire">IBAN</abbr> <i class="icon-interrogation"></i></label>
+                                                        <input class="form-control" data-toggle="tooltip" ng-model="iban_debut" data-placement="top" title="4 caractères" placeholder="Ex. : FR01">
+                                                    </div>
+                                                    <div class="form-group col-md-7">
+                                                        <label>&nbsp;</label>
+                                                        <input class="form-control" data-toggle="tooltip" data-placement="top" title="24 caractères" arial-label="Suite IBAN" placeholder="Ex. : 0000 0000 0000 0000 0000 0000">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="form-group col-md-3" ng-if="iban_debut && iban_debut != 'FR'">
+                                                        <label><abbr title="Business Identifier Code&nbsp;: votre banque">BIC</abbr> <i class="icon-interrogation"></i></label>
+                                                        <input class="form-control" data-toggle="tooltip" data-placement="top" title="10 caractères" placeholder="ex : BRED123456">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12  text-center"><button class="btn btn-default" ng-click="finScenario()">Confirmer</button></div>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                    <h3>Rappel : coordonnées enregistrées</h3>
+                                    <p><abbr title="International Bank Account Number&nbsp;: votre compte bancaire">IBAN</abbr> : FR01 0000 0000 0000 0000 0000 0000 | <abbr title="Business Identifier Code&nbsp;: votre banque">BIC</abbr> : BRED123456</p>
+                                </div>
+
+
+                                <!-- Bloc acompte -->
+                                <div class="transition-fade" ng-show="etape=='acompte'">
+                                    <p>Vous avez déclaré des revenus soumis aux acomptes.</p>
+                                    <p>Compte tenu du nouveau taux calculé et en tenant compte des acomptes éventuellement payés, vos prélèvements seront les suivants jusqu'au 31 décembre 2019 :</p>
+
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <td>Revenus fonciers</td>
+                                            <td>107 €</td>
+                                        </tr>
+                                    </table>
+
+                                    <p>Cet acompte sera prélevé sur le compte bancaire suivant :</p>
+
+                                    <div class="well well-sm container col-md-12">
+                                        <form class="">
+                                            <div>
+                                                <div class="form-group col-md-3">
+                                                    <select class="form-control" aria-label="Civilité">
+                                                    <option>Civilité</option>
+                                                    <option value="1">Madame</option>
+                                                    <option value="2">Monsieur</option>
+                                                    <option value="2">Madame ou Monsieur</option>
+                                                </select>
+                                                </div>
+                                                <div class="form-group col-md-9">
+                                                    <input class="form-control" data-toggle="tooltip" data-placement="top" title="Nom et prénom du ou des titulaire(s) du compte" placeholder="Nom et prénom du ou des titulaire(s) du compte" arial-label="Nom et prénom du ou des titulaire(s) du compte">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="form-group col-md-3">
+                                                    <label><abbr title="International Bank Account Number&nbsp;: votre compte bancaire">IBAN</abbr> <i class="icon-interrogation"></i></label>
+                                                    <input class="form-control" data-toggle="tooltip" ng-model="iban_debut" data-placement="top" title="4 caractères" placeholder="Ex. : FR01">
+                                                </div>
+                                                <div class="form-group col-md-7">
+                                                    <label>&nbsp;</label>
+                                                    <input class="form-control" data-toggle="tooltip" data-placement="top" title="24 caractères" arial-label="Suite IBAN" placeholder="Ex. : 0000 0000 0000 0000 0000 0000">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="form-group col-md-3" ng-if="iban_debut && iban_debut != 'FR'">
+                                                    <label><abbr title="Business Identifier Code&nbsp;: votre banque">BIC</abbr> <i class="icon-interrogation"></i></label>
+                                                    <input class="form-control" data-toggle="tooltip" data-placement="top" title="10 caractères" placeholder="ex : BRED123456">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12  text-center"><button class="btn btn-default" ng-click="finScenario()">Confirmer</button></div>
+                                        </form>
+                                    </div>
+
+
+                                    <div class="text-right" ng-show="scenario=='chgt_sit'">
+                                        <a class="btn btn-primary" ng-click="finScenario()">Confirmer mon changement de situation</a>
+                                    </div>
+                                    <div class="text-right" ng-show="scenario=='modul_tx'">
+                                        <a class="btn btn-default">Conserver mon ancien taux</a>
+                                        <a class="btn btn-primary" ng-click="finScenario()">Confirmer la modulation</a>
+                                    </div>
+                                </div>
+
+
+                                <!-- Bloc fin de scénario -->
+                                <div class="transition-fade" ng-show="etape=='fin'">
+                                    <p>Les modifications demandées ont bien été prises en compte.</p>
+                                </div>
+
+
+                                <!-- Historique des prélèvements -->
+                                <div ng-show="scenario=='historiquePaiements'">
+                                    <!-- Boutons de filtre -->
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="switch">
+                                                <div>
+                                                    <input class="curseur rond" name="filtreHistoTiers" id="filtreHistoTiers" type="checkbox" ng-model="filtre.tiers">
+                                                    <label for="filtreHistoTiers"></label>
+                                                    <span>
+                                                    Afficher les retenues par les tiers
+            	                                </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="switch">
+                                                <div>
+                                                    <input class="curseur rond" name="filtreHistoAcompte" id="filtreHistoAcompte" type="checkbox" ng-model="filtre.acompte">
+                                                    <label for="filtreHistoAcompte"></label>
+                                                    <span>
+                                                    Afficher les acomptes prélevés par la DGFiP
+            	                                </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tableau d'historique -->
+                                    <table class="table table-hover historique">
+                                        <thead>
+                                            <tr>
+                                                <th ng-click="toggleDate()">
+                                                    Date
+                                                    <i class="ng-class:{'icon-caret-bottom':dateDesc, 'icon-caret-top':!dateDesc}"></i>
+                                                </th>
+                                                <th>Montant</th>
+                                                <th>Détail</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="{{ligne.type}} ng-class:{'danger' : ligne.detail.rejete, 'active' : ligneActive==ligne}" ng-repeat="ligne in (historiqueFiltre = (historiquePaiements | filter:filtrePaiements())) | orderBy:'date':dateDesc"
+                                                ng-click="activerLigne(ligne)" ng-init="filtre.modification=false">
+                                                <td>
+                                                    <span title="Montant retenu par votre employeur sur la paye du mois de {{ligne.date | date : 'MMMM yyyy'}}" ng-if="ligne.type=='tiers'">
+                                                        {{ligne.date | date : 'MMMM&nbsp;yyyy'}}
+                                                    </span>
+                                                    <span title="Montant prélevé par la DGFiP au titre de l'acompte du mois de {{ligne.date | date : 'MMMM yyyy'}}" ng-if="ligne.type=='acompte'">
+                                                        {{ligne.date | date : 'dd&nbsp;MMMM&nbsp;yyyy'}}
+                                                    </span>
+                                                </td>
+                                                <td>{{ligne.detail.montant | currency}}</td>
+
+                                                <!-- Prélèvement Tiers collecteur -->
+                                                <td ng-if="ligne.type=='tiers'">
+                                                    <p>Retenue - {{ligne.detail.tiers.nom}}</p>
+                                                    <div class="detail">
+                                                        <p>
+                                                            SIREN&nbsp;: {{ligne.detail.tiers.siren}} <br>
+                                                            {{ligne.detail.tiers.adresse}}
+                                                        </p>
+                                                        <p class="text-primary">
+                                                            <span>Taux de retenue<span ng-if="ligne.detail.tauxDefaut"> par défaut</span>&nbsp;: <strong>{{ligne.detail.taux}}</strong></span>
+                                                            <span class="col-md-offset-1">Base imposable&nbsp;: <strong>{{ligne.detail.base | currency}}</strong></span>
+                                                        </p>
+                                                    </div>
+                                                </td>
+
+                                                <!-- Prélèvement acompte -->
+                                                <td ng-if="ligne.type=='acompte'">
+                                                    <p>
+                                                        <span ng-if="!ligne.detail.rejete">Acompte</span>
+                                                        <strong class="text-danger" ng-if="ligne.detail.rejete">ACOMPTE REJETÉ</strong> - Direction Générale des Finances Publiques
+                                                    </p>
+                                                    <div class="detail">
+                                                        <div ng-if="ligne.detail.dateRejet && !ligne.detail.dateRegul">
+                                                            <p class="list-unstyled ng-class:{'text-danger':!ligne.detail.dateRegul}">
+                                                                <strong>Prélèvement rejeté le {{ligne.detail.dateRejet | date : 'd MMMM yyyy'}} ({{ligne.detail.motifRejet}}).</strong>
+                                                            </p>
+                                                            <p class="text-center">
+                                                                <a href="#" class="btn btn-danger btn-sm">Régulariser le paiement</a>
+                                                            </p>
+                                                        </div>
+                                                        <p>
+                                                            <ul class="list-unstyled">
+
+                                                                <li ng-repeat="acompte in ligne.detail.acomptes" ng-class="{'text-muted italic':$last}">
+                                                                    {{acompte.revenu}}&nbsp;: <strong>{{acompte.montant | currency}}</strong>
+                                                                </li>
+                                                            </ul>
+                                                        </p>
+                                                        <p>Compte prélévé : {{ligne.detail.rib}}</p>
+                                                        <p class="list-unstyled ng-class:{'text-danger':!ligne.detail.dateRegul}" ng-if="ligne.detail.dateRejet && ligne.detail.dateRegul">
+                                                            <strong>Règlement régularisé le {{ligne.detail.dateRegul | date : 'd MMMM yyyy'}}.</strong>
+                                                        </p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody class="total">
+                                            <tr>
+                                                <td>Total</td>
+                                                <td>{{totalMontants(historiqueFiltre) | currency}}</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="text-center clearfix">
+                                        <nav class="" aria-label="Modifications du prélèvement à la source par année">
+                                            <ul class="pagination">
+                                                <li class="ng-class:{active:anneeHisto==2018}" ng-click="anneeHisto=2018; titre='Retenues et acomptes - 2018'"><a href="#">2018</a></li>
+                                                <li class="ng-class:{active:anneeHisto==2019}" ng-click="anneeHisto=2019; titre='Retenues et acomptes - 2019'"><a href="#">2019<span class="sr-only"> (Actuellement affiché)</span></a></li>
+                                            </ul>
+                                        </nav>
+                                        <a href="#" class="btn btn-link pull-right">Retour à l'accueil</a>
+                                    </div>
+                                </div>
+
+
+                                <!-- Historique des modifications -->
+                                <div ng-show="scenario=='historiqueModifs'">
+                                    <table class="table table-hover full">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Modification</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="modifications">
+                                            <tr class="ng-class:{'text-muted italic': !ligne.impactFoyer}"ng-repeat="ligne in (historiqueFiltre = (historiquePaiements | filter:filtreModifs())) | orderBy:'date':true">
+                                                <td>
+                                                    <p>{{ligne.date | date : 'dd/MM/yyyy'}}</p>
+                                                </td>
+                                                <td>
+                                                    <p><strong>{{naturesEvenements[ligne.evenement]}}</strong></p>
+                                                    <p>Modification effectuée le {{ligne.detail.horodate | date : 'EEEE d MMMM yyyy'}} à {{ligne.detail.horodate | date : 'H'}}h{{ligne.detail.horodate | date : 'mm'}} <br>
+                                                        par {{ligne.detail.origine}}</p>
+                                                    <p class="text-primary" ng-if="ligne.detail.taux">Taux calculé&nbsp;: <strong>{{ligne.detail.taux}}</strong></p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div class="text-center clearfix">
+                                        <nav class="" aria-label="Modifications du prélèvement à la source par année">
+                                            <ul class="pagination">
+                                                <li class="ng-class:{active:anneeHisto==2017}" ng-click="anneeHisto=2017; titre='Historique de mes actions - 2017'"><a href="#">2017</a></li>
+                                                <li class="ng-class:{active:anneeHisto==2018}" ng-click="anneeHisto=2018; titre='Historique de mes actions - 2018'"><a href="#">2018</a></li>
+                                                <li class="ng-class:{active:anneeHisto==2019}" ng-click="anneeHisto=2019; titre='Historique de mes actions - 2019'"><a href="#">2019<span class="sr-only"> (Actuellement affiché)</span></a></li>
+                                            </ul>
+                                        </nav>
+                                        <a href="#" class="btn btn-link pull-right">Retour à l'accueil</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Panel d'individualisation -->
+                        <div class="panel panel-default transition-fade" ng-show="['marié', 'pacsé'].indexOf(historique[2019].sitfam)!=-1 && etape=='accueil'">
+
+                            <div class="panel-heading">
+                                <h2>
+                                    Individualisation de votre taux de prélèvement
+                                    <i class="icon-interrogation pull-right text-standard"
+                                        data-placement="left"
+                                        data-toggle="popover"
+                                        data-trigger="hover"
+                                        data-html="true"
+                                        title="Individualisation de votre taux de prélèvement"
+                                        data-content="<p class='text-standard'>L’option pour l’individualisation du taux de prélèvement est adaptée pour les couples qui ont une différence importante de revenus.</p>
+                                            <p class='text-standard'>Elle permet à chacun de voir appliqué par son collecteur (employeur, caisse de retraite, pôle emploi…) un taux de prélèvement représentatif de ses revenus personnels.</p>
+                                            <p class='text-standard'>Cette option est tacitement reconductible et révocable à tout moment.</p>
+                                            <p class='text-standard'>Elle ne concerne pas les personnes à charge ou rattachées, même si elles disposent de revenus propres.</p>"
+                                        ></i>
+                                </h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="switch">
+                                    <div>
+                                        <input class="curseur rond" name="retenue_indiv" id="retenue_indiv" type="checkbox" data-toggle="modal" data-target="#myModal">
+                                        <label for="retenue_indiv" class="pull-left"></label>
+                                        <span> J'opte pour un taux individualisé, soit <strong>{{historique[2019].tauxIndivMonsieur}}</strong> pour Monsieur Michel Martin et <strong>{{historique[2019].tauxIndivMadame}}</strong> pour Madame Michelle Martin.
+	                                </span>
+                                    </div>
+                                </div>
+                                <p>
+                                    <small>
+    	                                <em>Si vous avez un ou plusieurs tiers collecteurs (employeur, caisse de retraite, pôle emploi), ce choix sera pris en compte, au plus tard, fin septembre.
+    	                                </em>
+    	                            </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne gauche -->
+                <div class="col-md-4 col-md-pull-8">
+
+                    <div class="row"><!-- Panel taux -->
+                        <div class="col-md-6 tuile-accueil">
+                            <div class="panel panel-default ">
+                                <div class="panel-body">
+                                    <p class="text-center">Votre taux est actuellement de&nbsp;:</p>
+                                    <h1 class="text-center" ng-show="!optionIndiv">{{historique[2019].taux}}</h1>
+                                    <h1 class="text-center" ng-show="optionIndiv">{{historique[2019].tauxIndivMonsieur}}</h1>
+                                    <p class="text-center small" ng-show="optionIndiv">Le taux de votre conjoint est de <strong class="text-primary">{{historique[2019].tauxIndivMadame}}</strong></p>
+                                    <button class="btn btn-primary btn-block btn-accueil" ng-click="initScenario('modul_tx')">Actualiser mon<br>prélèvement<br>à la source</button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Panel événement -->
+                        <div class="col-md-6 tuile-accueil">
+                            <div class="panel panel-default ">
+                                <div class="panel-body">
+                                    <p class="text-center">Votre dernière situation de famille connue est :</p>
+                                    <h1 class="text-center">{{historique[2019].sitfam}}</h1>
+                                    <button class="btn btn-primary btn-block btn-accueil" ng-click="initScenario('chgt_sit')">
+                                        <span ng-if="historique[2019].sitfam=='marié'">Déclarer un<br>divorce ou un décès</span>
+                                        <span ng-if="historique[2019].sitfam=='pacsé'">Déclarer une<br>séparation ou<br>un décès</span>
+                                        <span ng-if="['marié', 'pacsé'].indexOf(historique[2019].sitfam)==-1">Déclarer un<br>mariage, un PACS<br>ou un décès</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+
+                        <!-- Panel acomptes -->
+                        <div class="col-md-6 tuile-accueil">
+                            <div class="panel panel-default ">
+                                <div class="panel-body">
+                                    <p class="text-center">Vos acomptes mensuels sur vos revenus fonciers, indépendants, pensions alimentaires... sont de&nbsp;:</p>
+                                    <h1 class="text-center">{{historique[2019].acompte}}</h1>
+                                    <p class="text-center small" ng-show="optionIndiv"><br><br></p>
+                                    <button class="btn btn-primary btn-block btn-accueil" ng-click="initScenario('modul_acpt')">Gérer mes acomptes</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 tuile-accueil tuile_cb">
+                            <div class="panel panel-default ">
+                                <div class="panel-body">
+                                    <button class="btn btn-primary btn-block btn-accueil" ng-click="initScenario('chgt_banq')">Mettre à jour<br>mes coordonnées<br>bancaires</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Historique -->
+                    <!--<div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body text-center">
+                                    <a href="#" onclick="return false;" ng-click="initScenario('historiquePaiements')">Consulter l'historique de mes prélèvements</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body text-center">
+                                    <a href="#" onclick="return false;" ng-click="initScenario('historiquePaiements')">Consulter l'historique de tous mes prélèvements</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body text-center">
+                                    <a href="#" onclick="return false;" ng-click="initScenario('historiqueModifs')">Consulter l'historique de mes actions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Option confidentialité -->
+                    <div class="row" ng-show="['accueil', 'historiquePaiements', 'historiqueModifs'].indexOf(scenario)!=-1">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <input class="curseur rond" name="acpt_confid" id="acpt_confid" type="checkbox" ng-model="optionConfid">
+                                    <label for="acpt_confid" ng-click="opterConfid()"></label><span>Ne pas transmettre mon taux à mon employeur</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modale pour l'individualisation du taux -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="titre_indiv" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="titre_indiv">Option pour l'individualisation</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>En choisissant cette option, les taux suivants seront communiqués aux tiers collecteurs&nbsp;:</p>
+                            <ul>
+                                <li>Monsieur Michel Martin: <strong>{{historique[2019].tauxIndivMonsieur}}</strong></li>
+                                <li>Madame Michelle Martin : <strong>{{historique[2019].tauxIndivMadame}}</strong></li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="opterIndiv()">Opter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modale acompte confidentialité -->
+            <div class="modal fade" id="confid" role="dialog" tabindex="-1" aria-labelledby="opt_confid" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="opt_confid">Option pour ne pas transmettre mon taux à mon employeur</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>En confirmant cette option, tous les organismes tiers vous versant des revenus (employeurs, caisses de retraite, etc.) appliqueront
+                                une retenue à la source sur la base de la <a href="#">grille de taux par défaut.</a></p>
+                            <p>En complément, un acompte sera prélevé chaque mois par la DGFiP, sur la base des revenus mensuels que vous devrez déclarer.
+                                Attention : tout versement insuffisant pourra être sanctionné par une pénalité.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal" ng-click="annulerConfid()">Annuler</button>
+                            <button class="btn btn-primary" id="valConfid" data-dismiss="modal" data-toggle="modal" data-target="#payConfid">Confirmer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modale paiement acompte confidentialité -->
+            <div class="modal fade" id="payConfid" role="dialog" tabindex="-1" aria-labelledby="pay_confid" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="pay_confid">Option pour ne pas transmettre mon taux à mon employeur</h4>
+                        </div>
+                        <div class="modal-body row">
+                            <div class="col-md-3" ng-show="!calculConfid">
+                                <button class="btn btn-block btn-primary" ng-click="calculConfid=true;">Calculer votre acompte</button>
+                            </div>
+                            <div class="col-md-1 text-center" ng-show="!calculConfid">
+                                <p><strong>ou</strong></p>
+                            </div>
+                            <div class="col-md-8" ng-show="!calculConfid">
+                                <p>
+                                    indiquez le montant que vous estimez devoir verser en complément de la retenue effectuée au taux par défaut sur vos revenus du mois de mars.
+                                </p>
+                                <div class="clearfix">
+                                    <div class="form-group col-md-3 col-md-offset-4">
+                                        <input class="form-control">
+                                    </div>
+                                </div>
+                                <div>
+                                    Ce montant sera reconduit chaque mois pour les prochaines échéances, sauf si vous venez indiquer un nouveau montant.
+                                </div>
+                            </div>
+                            <div ng-show="calculConfid">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label>Indiquez le montant de votre salaire du mois de mars :</label>
+                                        <input class="form-control" placeholder="Saisir un montant">
+                                    </div>
+                                    <button class="btn btn-primary" ng-click="calculConfidAcheve=true">Calculer</button>
+                                </form>
+                            </div>
+                            <div ng-show="calculConfidAcheve">
+                                <p>Montant prélevé au titre du mois de mars : <strong class="text-primary">250 €</strong>.</p>
+                            </div>
+                            <div ng-show="calculConfidAcheve">
+                                Ce montant sera reconduit chaque mois pour les prochaines échéances, sauf si vous venez indiquer un nouveau montant.
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal" ng-click="annulerConfid()">Annuler</button>
+                            <button class="btn btn-primary" data-dismiss="modal" ng-click="optionConfid=true;">Valider</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modale créer un nouvel acompte -->
+            <div class="modal fade" id="nouvAcompte" role="dialog" aria-labelledby="crea_acompte" aria-hidden="true" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="crea_acompte">Créer un nouvel acompte</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table id="creatAcompte" class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-10"></th>
+                                        <th class="col-md-2">Montant</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--<tr><td><p>Revenus fonciers</p></td><td><input type="number" class="form-control" /></td></tr>
+				<tr><td><p>Bénéfices agricoles</p></td><td><input type="number" class="form-control" /></td></tr>-->
+                                    <tr>
+                                        <td>
+                                            <p>Bénéfices industriels et commerciaux</p>
+                                        </td>
+                                        <td><input type="number" class="form-control" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Bénéfices non commerciaux</p>
+                                        </td>
+                                        <td><input type="number" class="form-control" /></td>
+                                    </tr>
+                                    <!--<tr><td><p>Rentes viagères à titre onéreux</p></td><td><input type="number" class="form-control" /></td></tr>
+				<tr><td><p>Pensions alimentaires</p></td><td><input type="number" class="form-control" /></td></tr>
+				<tr><td><p>Revenus étrangers versés par un débiteur établi hors de France</p></td><td><input type="number" class="form-control" /></td></tr>-->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Annuler</button>
+                            <button class="btn btn-primary">Confirmer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modale report acompte -->
+            <div class="modal fade" id="repAcompte" tabindex="-1" role="dialog" aria-labelledby="report_acompte" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="report_acompte">Reporter un acompte</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Vous pouvez reporter, sur l'échéance suivante, le paiement d'un acompte dans la limite de 3 mensualités (acomptes mensuels) ou un trimestre (acomptes trimestriels) au cours de l'année civile par catégorie de revenu.</p>
+                            <p>La dernière échéance de l'année n'est pas reportable.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Annuler</button>
+                            <button class="btn btn-primary">Reporter le paiement de l'acompte de mars sur sur le mois d'avril</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modale moduler acompte -->
+            <div class="modal fade" id="augAcompte" tabindex="-1" role="dialog" aria-labelledby="modul_acompte" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="modul_acompte">Moduler un acompte</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Vous allez moduler l'acompte XXX. Les sommes perçues seront recalculées en fin d'année.</p>
+                            <p>Montant actuel&nbsp;: <strong>19 euros</strong></p>
+                            <p><label for="">Nouveau montant&nbsp;:</label> <input type="number" /></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Annuler</button>
+                            <button class="btn btn-primary">Confirmer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modale suppression acompte -->
+            <div class="modal fade" id="supAcompte" role="dialog" tabindex="-1" role="dialog" aria-labelledby="suppr_acompte" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="suppr_acompte">Supprimer un acompte</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Vous allez supprimer l'acompte XXX.</p>
+                            <p>Cette action n'entraine pas le remboursement des sommes perçues précedemment qui ne sont recalculées qu'en fin d'année.</p>
+                            <p>En cas de reprise d'une activité, vous pourrez recréer un acompte à tout moment.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Annuler</button>
+                            <button class="btn btn-primary">Confirmer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modale opter trimestrialisation -->
+            <div class="modal fade" id="optTrim" tabindex="-1" role="dialog" aria-labelledby="trim_acomptes" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="trim_acomptes">Opter pour la trimestrialisation des acomptes</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Vous allez opter pour une trimestrialisation de vos acomptes&nbsp;; vos acomptes ne seront plus prélevés mensuellement.</p>
+                            <p><strong>Cette action option sera effective à compter du 1<sup>er</sup> janvier 2019.</strong></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Annuler</button>
+                            <button class="btn btn-primary" id="validTrim">Confirmer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- fin container -->
+
+
+        <!-- Footer -->
+        <div class="footer text-center">
+            <p>Direction générale des Finances publiques &nbsp;-&nbsp;<a href="#">Mentions légales</a></p>
+        </div>
+
+
+        <script src="js/jquery-1.12.0.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <!-- <script src="js/angular-aria.min.js"></script>-->
+        <script src="js/angular-animate.min.js"></script>
+        <script src="js/angular-locale_fr-fr.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/ui-bootstrap-tpls.min.js"></script>
+        <script src="js/PAS.js"></script>
+        <script src="js/bootstrap-accessibility.min.js"></script>
+        <script>
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip({
+                    'trigger': 'focus'
+                })
+            })
+        </script>
+        <!--
+	<script language="javascript" type="text/javascript" src="js/histo/jquery.flot.min.js"></script>  graphe
+	<script language="javascript" type="text/javascript" src="js/histo/jquery.flot.time.min.js"></script>  chronologie adaptative
+	<script language="javascript" type="text/javascript" src="js/histo/jquery.flot.selection.min.js"></script> zoom drag
+	<script language="javascript" type="text/javascript" src="js/histo/jquery.flot.navigate.min.js"></script> zoom scroll
+	<script language="javascript" type="text/javascript" src="js/histo/jquery.flot.symbol.min.js"></script> symboles points
+	<script language="javascript" type="text/javascript" src="js/histo/histo.js"></script>  graphe historique -->
+        <script language="javascript" type="text/javascript" src="js/histo/histo_tableau.js"></script>
+        <!-- tableau données -->
+    </body>
+
+</html>

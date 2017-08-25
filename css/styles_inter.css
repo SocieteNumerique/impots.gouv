@@ -1,0 +1,224 @@
+div#bandeau {
+	width:900px;
+	height:90px;
+	vertical-align: middle;
+	float: none;
+
+	}
+div#presentation {
+	width:900px;
+	height:30px;
+	vertical-align: middle;
+
+	
+	}	
+div#pied_page {
+	clear:both;
+	width:900px;
+	height:50px;
+	
+	}
+div#espace {
+	float:left;
+	width:15px;
+	height:440px;
+		}	
+div#espacemoyen {
+	float:left;
+	width:15px;
+	height:320px;
+		}	
+div#espacev {
+	float: left;
+	width: 15px;
+	height: 150px;
+}
+div#espacevmini {
+	float: left;
+	width: 15px;
+	height: 60px;
+}
+div#espacevgrand {
+	float: left;
+	width: 15px;
+	height: 550px;
+}
+div#espacevdeml {
+	width:15px;
+	height:220px;
+	float: left;
+}
+div#espaceh {
+	width:425px;
+	height:15px;
+	clear: none;
+	float: left;
+}
+div#espacehdeml {
+	width:800px;
+	height:15px;
+	clear: none;
+	float: left;
+}
+div#espace40 {
+	width:40px;
+	height:40px;
+	clear: none;
+	float: left;
+}
+div#espacehh {
+	width: 860px;
+	height: 15px;
+	clear: none;
+	float: left;
+}
+
+div#menu3lignes {
+	float:left;
+	width:425px;
+	height: 20px;
+	background-color:#FFF;
+border: thin solid #BBCCD3;
+}
+	
+div#menu3 {
+	float:left;
+	width:425px;
+	height:150px;
+	background-color:#FFF;
+	border: thin solid #BBCCD3;
+	}
+div#menu2 {
+	float:left;
+	width:425px;
+	height:150px;
+	background-color:#FFF;
+	border: thin solid #bbccd3;
+	}
+div#menu21 {
+	float: left;
+	width: 430px;
+	background-color: #FFF;
+	border: thin solid #bbccd3;
+}
+
+div {
+	
+	margin: auto;
+
+	}
+div#menu1 {
+	float:left;
+	width:430px;
+	height:150px;
+	margin-left: auto;
+	background-color:#FFF;
+	border: thin solid #bbccd3;
+	}
+	
+div#menu1petit {
+	float:left;
+	width:425px;
+	height:100px;
+	margin-left: auto;
+	background-color:#FFF;
+	border: thin solid #bbccd3;
+	}
+div#menu1petitlarge {
+	float:left;
+	width:800px;
+	height:100px;
+	margin-left: auto;
+	background-color:#FFF;
+	border: thin solid #bbccd3;
+	}
+	
+div#menu1deml {
+	float:left;
+	width:430px;
+	height:310px;
+	margin-left: auto;
+	background-color:#FFF;
+	border: thin solid #bbccd3;
+	}
+	
+div#menu2deml {
+	float:left;
+	width:425px;
+	height:310px;
+	margin-left: auto;
+	background-color:#FFF;
+	border: thin solid #bbccd3;
+	}
+	
+div#espacebloc1 {
+	float:left;
+	width:225px;
+	height:100px;
+	clear: none;
+	}
+div#espacebloc40 {
+	float:left;
+	width:40px;
+	height:100px;
+	clear: none;
+	}
+div#espacebloc2 {
+	float:left;
+	width:250px;
+	height:100px;
+	clear: none;
+	}
+div#espacebloc3 {
+	float:left;
+	width:100px;
+	height:100px;
+	clear: none;
+	}
+div#espacebloc4 {
+	float:left;
+	width:70px;
+	height:100px;
+	clear: none;
+	}	
+div#menu1timb {
+	float: left;
+	width: 430px;
+	height: 150px;
+	margin-left: auto;
+	background-color: #FFF;
+	border: thin solid #bbccd3;
+}
+
+div#menu111 {
+	float:left;
+	width:430px;
+	height:430px;
+	margin-left: auto;
+	background-color:#FFF;
+	border: thin solid #bbccd3;
+}
+
+div#menu11 {
+	float:left;
+	width:430px;
+	height:370px;
+	margin-left: auto;
+	background-color:#FFF;
+	border: thin solid #bbccd3;
+}
+
+#travaux {
+	color: #F60;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+#apDiv1 table tr td #travaux a {
+	color: #F60;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+#apDiv1 table tr td #travaux a:hover {
+	color: #F60;
+	font-size: 14px;
+}

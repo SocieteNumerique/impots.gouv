@@ -1,0 +1,25 @@
+$('#bouton_tab2018').click(function(){
+	$('#tab2018').show();
+	$('#bouton_tab2018').hide();
+	$('#tab2019').hide();
+	$('#bouton_tab2019').show();	
+});
+$('#bouton_tab2019').click(function(){
+	$('#tab2019').show();
+	$('#bouton_tab2019').hide();
+	$('#tab2018').hide();
+	$('#bouton_tab2018').show();	
+});
+
+$('#bouton_tab2018').keypress(function(){
+	$('#tab2018').show();
+	$('#bouton_tab2018').hide();
+	$('#tab2019').hide();
+	$('#bouton_tab2019').show();	
+});
+$('#bouton_tab2019').keypress(function(){
+	$('#tab2019').show();
+	$('#bouton_tab2019').hide();
+	$('#tab2018').hide();
+	$('#bouton_tab2018').show();	
+});

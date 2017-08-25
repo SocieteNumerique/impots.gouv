@@ -1,0 +1,119 @@
+@charset "utf-8";
+#apDiv1 {
+	position:absolute;
+	left:742px;
+	top:121px;
+	width:209px;
+	height:47px;
+	z-index:1;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: smaller;
+	font-weight: bolder;
+	color: #808080;
+	font-style: italic;
+	text-align: center;
+}
+
+h1 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: large;
+	font-weight: bold;
+	color: #666;
+	border-bottom-width: medium;
+	border-bottom-style: double;
+	border-bottom-color: #E2E2E2;
+}
+
+.table {
+	border: thin solid #CCC;
+	background-color: #FFF;
+}
+
+h2 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: medium;
+	color: #000;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+}
+h2 a {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: medium;
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+h2 a:hover {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: medium;
+	color: #666;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+
+
+h3 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	color: #D6D6D6;
+}
+
+ul {
+	list-style-position: outside;
+	list-style-image: url(../img/puce_grise.gif);
+	list-style-type: none;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #083a5b;
+	font-size: small;
+}
+
+ul a {
+	list-style-position: outside;
+	list-style-image: url(../img/puce_grise.gif);
+	list-style-type: none;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #083a5b;
+	font-size: small;
+	text-decoration: none;
+}
+
+ul a:hover {
+	list-style-position: outside;
+	list-style-image: url(../img/puce_lien_header.png);
+	list-style-type: none;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #083a5b;
+	font-size: small;
+	text-decoration: underline;
+}
+
+#apDiv2 {
+	position:absolute;
+	left:149px;
+	top:120px;
+	width:691px;
+	height:395px;
+	z-index:1;
+}
+
+body {
+	background-image: url(../img/banniere_declarer1.gif);
+	background-repeat: no-repeat;
+}
+
+#apDiv1 {
+	position:absolute;
+	left:742px;
+	top:121px;
+	width:209px;
+	height:47px;
+	z-index:1;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: smaller;
+	font-weight: bolder;
+	color: #808080;
+	font-style: italic;
+	text-align: center;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_messagerie.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Effectuer une démarche en ligne</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#apDiv3 {
+	position: absolute;
+	left: 458px;
+	top: 361px;
+	width: 264px;
+	height: 36px;
+	z-index: 3;
+}
+#apDiv4 {
+	position: absolute;
+	left: 260px;
+	top: 487px;
+	width: 19px;
+	height: 18px;
+	z-index: 4;
+}
+#apDiv5 {
+	position: absolute;
+	left: 334px;
+	top: 547px;
+	width: 17px;
+	height: 17px;
+	z-index: 50;
+}
+#apDiv6 {
+	position: absolute;
+	left: 487px;
+	top: 608px;
+	width: 21px;
+	height: 17px;
+	z-index: 6;
+}
+</style>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<!-- InstanceEndEditable -->
+<style type="text/css">
+ul {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	font-weight: normal;
+	color: #F30;
+	list-style-type: disc;
+}
+
+a:hover {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	color: #F30;
+	text-decoration: underline;
+	font-weight: bold;
+}
+a {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	color: #F30;
+}
+.commentaire {
+	z-index:2;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: small;
+	color: #F30;
+}
+</style>
+</head>
+
+<body onload="MM_preloadImages('img/commun/survol_remonteeavis.gif','img/commun/survol_choixmillesime.gif','img/commun/survol_choiximpot.gif')">
+<div id="retour"><a href="../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../img/picto_new/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<div id="apDiv6"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('inforemontee','','img/commun/survol_remonteeavis.gif',1)"><img src="img/commun/survole_infobulle.gif" alt="infobulle d'aide sur les avis remontés de la mémoire d'e-contacts" border=0 id="inforemontee" /></a></div>
+<div id="apDiv5"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('choixmillesime','','img/commun/survol_choixmillesime.gif',1)"><img src="img/commun/survole_infobulle.gif" alt="Informations sur le choix du millésime" border=0 id="choixmillesime" /></a></div>
+<div id="apDiv4"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('choiximpot','','img/commun/survol_choiximpot.gif',1)"><img src="img/commun/survole_infobulle.gif" alt="Informations sur le choix de l'impot" border=0 id="choiximpot" /></a></div>
+
+<img src="img/difficultes/difficultesremonteeavis.gif" alt="difficultés de paiement écran 2" width="988" height="722" usemap="#Map" border="0" />
+<map name="Map" id="Map">
+  <area shape="rect" coords="195,692,387,722" href="difficultes4.html" alt="valider cet avis" />
+  <area shape="rect" coords="389,692,528,724" href="difficultes3.html" alt="choisir un autre avis" />
+  <area shape="rect" coords="690,693,801,721" href="abandon.html" alt="abandon" />
+</map>
+ 
+<p>&nbsp;</p>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

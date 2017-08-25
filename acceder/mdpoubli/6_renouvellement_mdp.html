@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+
+<style type="text/css">
+#infobulle_num_fiscal {
+	position: absolute;
+	left: 160px;
+	top: 80px;
+	height: 151px;
+}
+#infobulle_mdp {
+	position: absolute;
+	left: 311px;
+	top: 279px;
+	height: 315px;
+	width: 421px;
+}
+
+</style>
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+
+<p><img src="img/renouv_mdp.png" alt="" usemap="#Map" border="0" />
+
+<div id="infobulle_num_fiscal" class="infobulle"> <img src="../creation/img/mire_aide1_2_numfiscal.png" alt="" /></div>
+<div id="infobulle_mdp" class="infobulle"> <img src="../creation/img/crea_aide2_mdp.png" alt="" />
+</div>
+
+  <map name="Map" id="Map">
+    <area shape="rect" coords="158,457,232,506" href="7_activation_renouv_mdp.html" />
+    <area shape="circle" href="#" coords="247,221,12" onmouseover="afficher_infobulle('infobulle_num_fiscal')" onmouseout="cacher_infobulle('infobulle_num_fiscal')"/>
+    
+      <area shape="circle" href="#" coords="293,307,12" onmouseover="afficher_infobulle('infobulle_mdp')" onmouseout="cacher_infobulle('infobulle_mdp')"/>
+</map>
+</p>
+<script src="../../js/infobulle.js">
+</script>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="EditRegion2" --><div id="option_cplt">
+<div id="cplt">
+<div id="texte_cplt">L'usager doit saisir :<br />
+    - son numéro fiscal,<br />
+    - son nouveau mot de passe,<br />
+    - la confirmation de son nouveau mot de passe.
+    <br />
+    Il valide ensuite le renouvellement de son mot de passe.</div></div>
+</div>
+  <!-- InstanceEndEditable -->  
+
+</body>
+<!-- InstanceEnd --></html>
