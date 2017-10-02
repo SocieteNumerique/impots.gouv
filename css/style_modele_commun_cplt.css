@@ -50,3 +50,19 @@
 	width: 90px;
 	height: 90px;
 }
+
+p {
+	font-family: Verdana, Geneva, sans-serif;
+}
+.texte_encadre_orange a
+{
+	border: solid;
+	border-color: #FF6600;
+	border-radius: 25%;
+}
+
+/*style applique a infobulle - est-ce utile ?*/
+/*area
+{
+	cursor: pointer;
+}*/
