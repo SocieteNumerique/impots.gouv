@@ -10,43 +10,58 @@
 <style type="text/css">
 #infobulle_madecla {
 	position: absolute;
-	left: 418px;
-	top: -2px;
+	left: 388px;
+	top: 22px;
 	height: 229px;
 	width: 339px;
 }
 #infobulle_mesavisIR {
 	position: absolute;
-	left: 439px;
-	top: 48px;
+	left: 412px;
+	top: 92px;
 	height: 229px;
 	width: 339px;
 }
 #infobulle_mesavisIL {
 	position: absolute;
-	left: 404px;
-	top: 85px;
+	left: 377px;
+	top: 128px;
 	height: 229px;
 	width: 339px;
 }
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
 <p>
-<img src="img/relance_demat_vide.png" usemap="#Map" border="0" />
+<img src="img/relance_demat_vide_1.png" width="1220" usemap="#Map" border="0" />
   <map name="Map" id="Map">
 
-<area shape="circle" href="#" coords="596,209,12" onmouseover="afficher_infobulle('infobulle_madecla')" onmouseout="cacher_infobulle('infobulle_madecla')"/>
+<area shape="rect" coords="577,453,655,499" href="4_relance_tel.html"/>
 
-<area shape="circle" href="#" coords="615,244,12"onmouseover="afficher_infobulle('infobulle_mesavisIR')" onmouseout="cacher_infobulle('infobulle_mesavisIR')" />
+<area shape="circle" href="#" coords="566,320,11"onmouseover="afficher_infobulle('infobulle_mesavisIL')" onmouseout="cacher_infobulle('infobulle_mesavisIL')" />
 
-<area shape="circle" href="#" coords="584,280,12"onmouseover="afficher_infobulle('infobulle_mesavisIL')" onmouseout="cacher_infobulle('infobulle_mesavisIL')" />
-<area shape="rect" coords="585,394,664,440" href="4_relance_tel.html" />
+<area shape="circle" href="#" coords="601,281,11"onmouseover="afficher_infobulle('infobulle_mesavisIR')" onmouseout="cacher_infobulle('infobulle_mesavisIR')" />
+<area shape="circle" href="#" coords="578,239,11" onmouseover="afficher_infobulle('infobulle_madecla')" onmouseout="cacher_infobulle('infobulle_madecla')" />
 </map>
 </p>
 <div id="infobulle_madecla" class="infobulle"> <img src="../creation/img/crea_aide5_madecla.png" alt="" /></div>
@@ -55,6 +70,9 @@
 <script src="../../js/infobulle.js">
 </script>
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">

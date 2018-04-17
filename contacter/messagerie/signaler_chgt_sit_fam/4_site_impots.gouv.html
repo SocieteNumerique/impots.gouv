@@ -9,6 +9,21 @@
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
@@ -20,6 +35,9 @@
 <p><img src="img/4_1_site_part.png" alt="" usemap="#Map" border="0" /><img src="img/4_2_site_part.png" width="700" height="482" /></p>
 
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" --> <div id="option_cplt">
 <div id="cplt">
 <div id="texte_cplt">

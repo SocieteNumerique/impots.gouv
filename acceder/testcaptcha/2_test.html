@@ -11,13 +11,28 @@
 #infobulle_perte_numfiscal 
 {
 	position: absolute;
-	left: 441px;
-	top: 41px;
+	left: 159px;
+	top: 91px;
 	height: 198px;
 }
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
@@ -28,9 +43,9 @@
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p><img src="img/test2.png" usemap="#Map" border="0" />
+  <p><img src="img/test2_1.png" usemap="#Map" border="0" />
     <map name="Map" id="Map">
-      <area shape="circle" coords="163,87,11" href="#" onmouseover="afficher_infobulle('infobulle_perte_numfiscal')" onmouseout="cacher_infobulle('infobulle_perte_numfiscal')"/>
+      <area shape="rect" coords="2,98,667,150" href="#" onmouseover="afficher_infobulle('infobulle_perte_numfiscal')" onmouseout="cacher_infobulle('infobulle_perte_numfiscal')"/>
     </map>
   </p>
   <div id="infobulle_perte_numfiscal" class="infobulle"> <img src="../numfiscalperdu/img/perte_numfiscal_infobulle_adresse.png" alt="" /></div>
@@ -39,11 +54,14 @@
 </script>
 
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">
 <div id="texte_cplt"><strong><em>Test de reconnaissance « image »</em></strong><br>
-    L'usager saisit les caractères correspondants  : combinaison de lettres en minuscules et de chiffres (exemple : fnvaq8).<br>
+    L'usager saisit les caractères correspondants  : combinaison de lettres en minuscules et de chiffres (exemple : dm3u61).<br>
   Si besoin, il est possible de visualiser une autre image en cliquant sur le lien «&nbsp;Changer d'image ».</div></div>
 </div>
 <!-- InstanceEndEditable -->  

@@ -12,29 +12,46 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img2017/6_pacpmr.JPG" width="1001" height="2026" usemap="#Map" border="0" />
+<p><img src="img/6_pacpmr.PNG" usemap="#Map" border="0" />
   <map name="Map" id="Map">
-    <area shape="rect" coords="1,128,157,166" href="page1.html" />
-    <area shape="rect" coords="1,171,160,207" href="page3.html" />
-    <area shape="rect" coords="151,311,250,345" href="page5.html" />
-    <area shape="rect" coords="166,926,375,973" href="page7.html" />
-    <area shape="rect" coords="189,1449,926,1470" href="page8.html" />
-<area shape="rect" coords="144,1968,278,2007" href="page5.html" />
-    <area shape="rect" coords="799,125,963,166" href="../../aide/aide.html" />
+    <area shape="rect" coords="15,139,171,177" href="page1.html" />
+    <area shape="rect" coords="11,182,170,218" href="page3.html" />
+    <area shape="rect" coords="212,325,311,359" href="page5.html" />
+    <area shape="rect" coords="227,807,436,854" href="page7.html" />
+    <area shape="rect" coords="144,1968,278,2007" href="page5.html" />
+    <area shape="rect" coords="838,135,1002,176" href="../../aide/aide.html" />
   </map>
 </p>
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">
-<div id="texte_cplt">Les éléments concernant les personnes à charge connues l'année précédente ne sont pas préremplis sur la déclaration. Cependant, un message prévient qu'au moins une personne à charge avait été déclarée l'année précédente.<br />
+<div id="texte_cplt">Les éléments concernant les personnes à charge connues l'année précédente sont  préremplis sur la déclaration. <br />
   <br />
-  L'usager doit cliquer sur &quot;Déclarer un enfant à charge&quot; et saisir l'intégralité de l'état-civil des personnes à charge.</div></div>
+  Pour ajouter un enfant, l'usager doit cliquer sur &quot;Déclarer un enfant à charge&quot; et saisir l'intégralité de l'état-civil des personnes à charge.</div></div>
 </div>
 <!-- InstanceEndEditable -->  
 

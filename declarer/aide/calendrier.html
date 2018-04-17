@@ -28,14 +28,29 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="false" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img2017/aide_declarer.JPG" width="785" height="633" usemap="#Map" border="0" />
+<p><img src="img/calendrier.JPG" usemap="#Map" border="0" />
   <map name="Map" id="Map">
-    <area shape="rect" coords="159,148,259,185" href="aide.html" />
+    <area shape="rect" coords="227,144,327,181" href="aide.html" />
   </map>
 </p>
  

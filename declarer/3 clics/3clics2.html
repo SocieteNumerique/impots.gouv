@@ -12,21 +12,38 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img2017/3_rapide.JPG" width="785" height="864" border="0" usemap="#Map" />
-  <map name="Map" id="Map">
-    <area shape="rect" coords="666,971,754,1004" href="3clics3.html" alt="Valider ma déclaration en quelques clics" />
-    <area shape="rect" coords="581,142,746,169" href="../aide/aide.html" target="_blank" />
-    <area shape="rect" coords="12,138,115,177" href="3clics1.html" />
-    <area shape="rect" coords="669,774,752,800" href="3clics3.html" />
+<p><img src="img/2_rapide.PNG" border="0" usemap="#Map" />
+  <map name="Map" id="Map"><area shape="rect" coords="991,140,1169,169" href="../aide/aide.html" target="_blank" />
+    <area shape="rect" coords="1084,853,1170,888" href="3clics3.html" />
+    <area shape="rect" coords="1161,564,1188,592" href="3clics2bis.html" />
+    <area shape="rect" coords="14,135,188,173" href="3clics1.html" />
   </map>
 </p>
  
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">

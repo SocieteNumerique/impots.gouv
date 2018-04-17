@@ -20,6 +20,21 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="false" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
@@ -29,7 +44,10 @@
   <map name="MapMap" id="MapMap">
     <area shape="rect" coords="39,133,199,173" href="../../../declaration/sit_famille/divorce_deces_deces2conjoints/page1.html" alt="Accueil" />
   </map>
-  <img src="img2017/17_pacpmr.JPG"  border="0" usemap="#Map" />
+  <img src="img/17_pacpmr.PNG"  border="0" usemap="#Map" />
+  <map name="Map" id="Map">
+    <area shape="rect" coords="884,1358,1073,1403" href="page18.html" />
+  </map>
   <area shape="rect" coords="13,142,120,178" href="page1.html" alt="Accueil" />
     <area shape="rect" coords="365,723,579,771" href="../../../index.html" />
     <area shape="rect" coords="515,416,586,482" href="img2017/asdir_pacpmr.JPG" target="_blank" />

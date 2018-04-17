@@ -70,6 +70,21 @@ body {
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="false" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
@@ -92,16 +107,16 @@ Pour visualiser d'autres catégories de revenus, revenir sur cette page en cliqu
   <tr bgcolor="#FFFFFF">
     <td><h2>Revenus</h2>
       <ul>
-        <li><a href="../ts/ts1.html">Traitements, salaires, prime pour l'emploi</a><br />
+        <li><a href="../ts/ts1.html">Traitements, salaires</a><br />
           <br />
         </li>
-        <li><a href="../rsa/rsa1.html">RSA, pensions, retraites, rentes y compris pensions alimentaires, rentes viagères à titre onéreux</a><br />
+        <li><a href="../pensions/pensions1.html">Pensions, retraites, rentes y compris pensions alimentaires, rentes viagères à titre onéreux</a><br />
           <br />
         </li>
         <li><a href="../rcm/rcm1.html">Revenus des valeurs et capitaux mobiliers</a><br />
           <br />
         </li>
-        <li><a href="../plus_values_vm/pv1.html">Plus-values de cessions de valeurs mobilières, droits sociaux, gains assimilés et gains divers</a><br />
+        <li><a href="../plus_values_vm/pv1.html">Gains de cessions de valeurs mobilières, droits sociaux, gains assimilés, plus-values et gains divers</a><br />
           <br />
         </li>
         <li><a href="../rf/rf1.html">Revenus fonciers<br />
@@ -119,7 +134,7 @@ Pour visualiser d'autres catégories de revenus, revenir sur cette page en cliqu
       <h2>Charges</h2>
       <ul>
         <li>
-          <p><a href="../charges_ded/cd1.html">Charges déductibles (pensions alimentaires...), charges et imputations diverses</a></p>
+          <p><a href="../charges_ded/cd1.html">Charges déductibles (pensions alimentaires, épargne retraite...), charges et imputations diverses</a></p>
         </li>
         <li>
           <p><a href="../rici/rici1.html">Réductions et crédit d'impôt</a><br />

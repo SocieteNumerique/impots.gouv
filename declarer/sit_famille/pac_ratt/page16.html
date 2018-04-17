@@ -12,6 +12,21 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
@@ -22,25 +37,21 @@
     <area shape="rect" coords="39,133,199,173" href="../../../declaration/sit_famille/divorce_deces_deces2conjoints/page1.html" alt="Accueil" />
   </map>
 </p>
-<p><img src="img2017/16_pacpmr.JPG"  border="0" usemap="#Map" />
+<p><img src="img/16_pacpmr.PNG"  border="0" usemap="#Map" />
   <map name="Map" id="Map">
     <area shape="rect" coords="188,1300,374,1328" href="page3.html" alt="Précédent" />
     <area shape="rect" coords="534,1295,741,1331" href="page17.html" alt="Signer ma déclaration" />
-    <area shape="rect" coords="-41,135,119,175" href="page1.html" alt="Accueil" />
-    <area shape="rect" coords="575,137,748,179" href="../../aide/aide.html" target="_blank" alt="Aide" />
-    <area shape="rect" coords="144,693,235,708" href="img2017/detail_pacpmr.JPG" target="_blank" />
+    <area shape="rect" coords="-18,137,142,177" href="page1.html" alt="Accueil" />
+    <area shape="rect" coords="743,133,916,175" href="../../aide/aide.html" target="_blank" alt="Aide" />
+    <area shape="rect" coords="841,567,934,611" href="page17.html" />
+<area shape="rect" coords="144,693,235,708" href="img2017/detail_pacpmr.JPG" target="_blank" />
   </map>
 </p>
 <!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="EditRegion2" -->
-<div id="option_cplt">
-<div id="cplt">
-<div id="texte_cplt">La saisie du RIB est obligatoire et l'usager doit accepter l'utilisation de ses coordonnées bancaires. Cette acceptation vaut mandat.
-  <br />
-  <br />
-  Si aucun RIB n'était préaffiché et si l'usager ne possède pas de compte bancaire dans la zone SEPA, il peut ne rien saisir mais doit cocher la case correspondante.</div></div>
-</div>
-<!-- InstanceEndEditable -->  
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../img/infoI.png" width="50%"/> </button></div>
+<!-- InstanceBeginEditable name="EditRegion2" --><!-- InstanceEndEditable -->  
 
 </body>
 <!-- InstanceEnd --></html>

@@ -21,24 +21,44 @@
 	z-index: 3;
 }
 </style>
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <div id="retour_rubriques"><a href="../avant_pivot/pivot8.html"><button class="bouton_retour"><img src="../../../img/accueil_pivot.PNG" alt="Retour au choix des rubriques" border="0"/></button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img2017/3_cd.JPG" width="960" height="1897" usemap="#Map" border="0" />
-  <map name="Map" id="Map"><area shape="rect" coords="824,1838,913,1884" href="cd4.html" /><area shape="rect" coords="214,1844,316,1881" href="cd1.html" />
-    <area shape="rect" coords="827,308,916,354" href="cd4.html" />
-    <area shape="rect" coords="714,131,910,166" href="../../aide/aide.html" target="_blank" />
-    <area shape="rect" coords="5,129,121,162" href="../avant_pivot/page1.html" />
-    <area shape="rect" coords="5,169,177,229" href="../avant_pivot/page7.html" />
+<p><img src="img/3_cd.PNG" usemap="#Map" border="0" />
+  <map name="Map" id="Map">
+    <area shape="rect" coords="827,1862,924,1899" href="cd4.html" />
+    <area shape="rect" coords="210,1860,312,1897" href="cd1.html" />
+    <area shape="rect" coords="836,326,921,360" href="cd4.html" />
+    <area shape="rect" coords="713,140,909,175" href="../../aide/aide.html" target="_blank" />
+    <area shape="rect" coords="12,143,128,176" href="../avant_pivot/page1.html" />
+    <area shape="rect" coords="2,188,174,248" href="../avant_pivot/page7bis.html" />
     <area shape="rect" coords="828,1906,921,1942" href="../../../declaration/2042/charges_ded/cd3.html" />
-    <area shape="rect" coords="208,314,310,351" href="cd1.html" />
+    <area shape="rect" coords="206,327,308,364" href="cd1.html" />
     <area shape="rect" coords="201,1900,311,1944" href="cd1.html" />
   </map>
 </p>
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">

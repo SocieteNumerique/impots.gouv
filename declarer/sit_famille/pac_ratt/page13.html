@@ -8,27 +8,48 @@
  
 <!-- InstanceEndEditable -->
 <!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+</style>
 <!-- InstanceEndEditable -->
-<!-- InstanceParam name="OptionalRegion1" type="boolean" value="false" -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p>
-  <map name="MapMap" id="MapMap">
-    <area shape="rect" coords="39,133,199,173" href="../../../declaration/sit_famille/divorce_deces_deces2conjoints/page1.html" alt="Accueil" />
-  </map>
-  <img src="img2017/13_pacpmr.JPG" width="957" height="1253" border="0" usemap="#Map" />
-  <map name="Map" id="Map"><area shape="rect" coords="832,1200,933,1251" href="page14.html" alt="Suivant" /><area shape="rect" coords="198,1219,308,1249" href="page12.html" alt="Précédent" /><area shape="rect" coords="207,316,317,346" href="page12.html" alt="Précédent" /><area shape="rect" coords="825,300,926,351" href="page14.html" alt="Suivant" />
-    <area shape="rect" coords="754,126,917,162" href="../../aide/aide.html" target="_blank" alt="Aide" />
-    <area shape="rect" coords="11,122,167,162" href="page1.html" />
-    <area shape="rect" coords="9,170,167,230" href="page12.html" />
+<p><img src="img/13_pacpmr.PNG"  border="0" usemap="#Map" />
+  <map name="Map" id="Map"><area shape="rect" coords="831,1793,917,1825" href="page14.html" alt="Suivant" />
+  <area shape="rect" coords="737,133,903,176" href="../../aide/aide.html" target="_blank" alt="Aide" /><area shape="rect" coords="7,136,167,176" href="page1.html" alt="Accueil" /><area shape="rect" coords="831,322,920,353" href="page14.html" alt="Suivant" />
   </map>
 </p>
  
 <!-- InstanceEndEditable -->
-  
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../img/infoI.png" width="50%"/> </button></div>
+<!-- InstanceBeginEditable name="EditRegion2" -->
+<div id="option_cplt">
+<div id="cplt">
+<div id="texte_cplt">Dans le cadre de la déclaration préremplie, l'écran est précoché si l'administration a connaissance de revenus concernant l'usager.<br />
+  Si l'usager à d'autres revenus à déclarer, il doit sélectionner les rubriques concernées.<br />
+  Puis cliquer sur &quot;Suivant&quot;.</div></div>
+</div>
+<!-- InstanceEndEditable -->  
 
 </body>
 <!-- InstanceEnd --></html>

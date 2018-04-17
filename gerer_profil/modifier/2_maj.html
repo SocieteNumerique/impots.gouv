@@ -11,60 +11,75 @@
 #infobulle_adresse 
 	{
 	position: absolute;
-	left: 319px;
-	top: 202px;
+	left: 284px;
+	top: 223px;
 	}
 #infobulle_mdp 
 	{
 	position: absolute;
-	left: 266px;
-	top: 336px;
+	left: 79px;
+	top: 257px;
 	}
 #infobulle_numtel 
 	{
 	position: absolute;
-	left: 327px;
-	top: 515px;
+	left: 297px;
+	top: 559px;
 	}
 #infobulle_mesdocs 
 	{
 	position: absolute;
-	left: 510px;
-	top: 174px;
+	left: 526px;
+	top: 184px;
 	}
 #infobulle_madecla 
 	{
 	position: absolute;
-	left: 777px;
-	top: 101px;
+	left: 797px;
+	top: 114px;
 	}
 #infobulle_mesavisIR 
 	{
 	position: absolute;
-	left: 800px;
-	top: 159px;
+	left: 821px;
+	top: 170px;
 	}
 #infobulle_mesavisIL 
 	{
 	position: absolute;
-	left: 771px;
-	top: 198px;
+	left: 785px;
+	top: 213px;
 	}
 #infobulle_pref 
 	{
 	position: absolute;
-	left: 603px;
-	top: 439px;
+	left: 638px;
+	top: 476px;
 	}
 #infobulle_adresse_actuelle 
 	{
 	position: absolute;
-	left: 539px;
-	top: 248px;
+	left: 420px;
+	top: 263px;
 	}
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
@@ -72,25 +87,25 @@
 <!-- InstanceBeginEditable name="EditRegion3" -->
 
 <p>
-<img src="img/maj_gmp.png" usemap="#Map" border="0" /></p>
+<img src="img/maj_gmp_1.png" width="1248" usemap="#Map" border="0" /></p>
 
 <map name="Map" id="Map">
 
-<area shape="rect" coords="131,228,295,256" href="3_1_maj_AE.html" />
-<area shape="rect" coords="133,353,245,380" href="4_1_maj_MDP.html" />
-<area shape="rect" coords="131,531,306,559" href="5_1_maj_TEL.html" />
-<area shape="rect" coords="737,227,861,255" href="6_1_maj_DOCS.html"/>
-<area shape="rect" coords="737,486,960,513" href="7_1_maj_PREF.html"/>
+<area shape="circle" href="#" coords="1003,528,11" onmouseover="afficher_infobulle('infobulle_pref')" onmouseout="cacher_infobulle('infobulle_pref')" />
+<area shape="circle" href="#" coords="974,408,11" onmouseover="afficher_infobulle('infobulle_mesavisIL')" onmouseout="cacher_infobulle('infobulle_mesavisIL')" />
+<area shape="circle" href="#" coords="1010,367,11" onmouseover="afficher_infobulle('infobulle_mesavisIR')" onmouseout="cacher_infobulle('infobulle_mesavisIR')" />
+<area shape="circle" href="#" coords="987,330,11" onmouseover="afficher_infobulle('infobulle_madecla')" onmouseout="cacher_infobulle('infobulle_madecla')"/>
+<area shape="circle" href="#" coords="889,241,11" onmouseover="afficher_infobulle('infobulle_mesdocs')" onmouseout="cacher_infobulle('infobulle_mesdocs')"/>
 
-<area shape="circle" href="#" coords="305,243,12" onmouseover="afficher_infobulle('infobulle_adresse')" onmouseout="cacher_infobulle('infobulle_adresse')"/>
-<area shape="circle" href="#" coords="527,281,12" onmouseover="afficher_infobulle('infobulle_adresse_actuelle')" onmouseout="cacher_infobulle('infobulle_adresse_actuelle')" />
-<area shape="circle" href="#" coords="255,367,12" onmouseover="afficher_infobulle('infobulle_mdp')" onmouseout="cacher_infobulle('infobulle_mdp')"/>
-<area shape="circle" href="#" coords="315,545,12" onmouseover="afficher_infobulle('infobulle_numtel')" onmouseout="cacher_infobulle('infobulle_numtel')"/>
-<area shape="circle" href="#" coords="872,242,12" onmouseover="afficher_infobulle('infobulle_mesdocs')" onmouseout="cacher_infobulle('infobulle_mesdocs')"/>
-<area shape="circle" href="#" coords="966,320,12" onmouseover="afficher_infobulle('infobulle_madecla')" onmouseout="cacher_infobulle('infobulle_madecla')"/>
-<area shape="circle" href="#" coords="988,356,12" onmouseover="afficher_infobulle('infobulle_mesavisIR')" onmouseout="cacher_infobulle('infobulle_mesavisIR')"/>
-<area shape="circle" href="#" coords="960,394,12" onmouseover="afficher_infobulle('infobulle_mesavisIL')" onmouseout="cacher_infobulle('infobulle_mesavisIL')"/>
-<area shape="circle" href="#" coords="971,502,12" onmouseover="afficher_infobulle('infobulle_pref')" onmouseout="cacher_infobulle('infobulle_pref')"/>
+<area shape="circle" href="#" coords="276,577,11" onmouseover="afficher_infobulle('infobulle_numtel')" onmouseout="cacher_infobulle('infobulle_numtel')"/>
+<area shape="rect" href="#" coords="74,433,502,465" onmouseover="afficher_infobulle('infobulle_mdp')" onmouseout="cacher_infobulle('infobulle_mdp')" />
+<area shape="circle" href="#" coords="402,285,11" onmouseover="afficher_infobulle('infobulle_adresse_actuelle')" onmouseout="cacher_infobulle('infobulle_adresse_actuelle')"/>
+<area shape="circle" href="#" coords="264,240,11" onmouseover="afficher_infobulle('infobulle_adresse')" onmouseout="cacher_infobulle('infobulle_adresse')"/>
+<area shape="rect" coords="760,515,986,540" href="7_1_maj_PREF.html"/>
+<area shape="rect" coords="757,222,874,254" href="6_1_maj_DOCS.html"/>
+<area shape="rect" coords="89,558,261,586" href="5_1_maj_TEL.html"/>
+<area shape="rect" coords="89,361,204,398" href="4_1_maj_MDP.html"/>
+<area shape="rect" coords="90,224,249,257" href="3_1_maj_AE.html"/>
 
 </map>
 
@@ -114,6 +129,9 @@
 <script src="../../js/infobulle.js">
 </script>
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">

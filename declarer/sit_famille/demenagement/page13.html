@@ -12,17 +12,35 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img2017/13_demenagement.JPG" width="958" height="1791" border="0" usemap="#Map" />
-  <map name="Map" id="Map"><area shape="rect" coords="746,119,911,157" href="../../aide/aide.html" target="_blank" alt="Aide" /><area shape="rect" coords="835,1725,924,1756" href="page14.html" alt="Suivant" /><area shape="rect" coords="842,317,931,348" href="page14.html" alt="Suivant" /><area shape="rect" coords="193,1725,306,1755" href="page12.html" alt="Précédent" /><area shape="rect" coords="203,314,316,344" href="page12.html" alt="Précédent" /><area shape="rect" coords="8,122,168,162" href="page1.html" alt="Accueil" />
+<p><img src="img/13_demenagement.PNG" border="0" usemap="#Map" />
+  <map name="Map" id="Map"><area shape="rect" coords="746,133,911,171" href="../../aide/aide.html" target="_blank" alt="Aide" /><area shape="rect" coords="830,1796,919,1827" href="page14.html" alt="Suivant" /><area shape="rect" coords="833,324,922,355" href="page14.html" alt="Suivant" /><area shape="rect" coords="205,1792,318,1822" href="page12.html" alt="Précédent" /><area shape="rect" coords="199,333,312,363" href="page12.html" alt="Précédent" /><area shape="rect" coords="4,136,164,176" href="page1.html" alt="Accueil" />
   </map>
 </p>
  
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">

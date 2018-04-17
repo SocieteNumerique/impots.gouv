@@ -21,20 +21,38 @@
 	z-index: 3;
 }
 </style>
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <div id="retour_rubriques"><a href="../avant_pivot/pivot8.html"><button class="bouton_retour"><img src="../../../img/accueil_pivot.PNG" alt="Retour au choix des rubriques" border="0"/></button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img2017/5_re.JPG" width="786" height="1336" border="0" usemap="#Map" />
-  <map name="Map" id="Map"><area shape="rect" coords="568,127,743,174" href="../../aide/aide.html" target="_blank" /><area shape="rect" coords="4,138,121,174" href="../avant_pivot/page1.html" alt="Accueil" />
-    <area shape="rect" coords="788,126,984,159" href="../../aide/aide.html" target="_blank" alt="Aide" />
-    <area shape="rect" coords="182,1253,381,1284" href="../avant_pivot/page4.html" alt="Corriger ma déclaration" />
-    <area shape="rect" coords="546,1244,734,1287" href="re6.html" alt="Signer ma déclaration" />
+<p><img src="img/5_re.PNG" border="0" usemap="#Map" />
+  <map name="Map" id="Map"><area shape="rect" coords="16,139,133,175" href="../avant_pivot/page1.html" alt="Accueil" />
+    <area shape="rect" coords="959,142,1155,175" href="../../aide/aide.html" target="_blank" alt="Aide" />
+    <area shape="rect" coords="328,1292,527,1323" href="../avant_pivot/page4.html" alt="Corriger ma déclaration" />
+    <area shape="rect" coords="886,1285,1074,1328" href="re6.html" alt="Signer ma déclaration" />
   </map>
 </p>
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">

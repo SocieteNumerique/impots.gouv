@@ -20,23 +20,41 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img2017/6_annexes.JPG" width="984" height="1845" usemap="#Map" border="0" />
+<p><img src="img/6_annexe.PNG" usemap="#Map" border="0" />
   <map name="Map" id="Map">
-    <area shape="rect" coords="4,132,112,166" href="page1.html" />
-    <area shape="rect" coords="754,117,939,162" href="../../aide/aide.html" target="_blank" />
-    <area shape="rect" coords="130,309,250,347" href="page5.html" />
-    <area shape="rect" coords="861,307,939,350" href="page7.html" />
-    <area shape="rect" coords="122,1811,250,1839" href="page5.html" />
-    <area shape="rect" coords="857,1799,955,1842" href="page7.html" />
+    <area shape="rect" coords="13,139,121,173" href="page1.html" />
+    <area shape="rect" coords="803,132,988,177" href="../../aide/aide.html" target="_blank" />
+    <area shape="rect" coords="204,323,324,361" href="page5.html" />
+    <area shape="rect" coords="937,322,1015,365" href="page7.html" />
+    <area shape="rect" coords="190,1917,318,1945" href="page5.html" />
+    <area shape="rect" coords="944,1906,1027,1947" href="page7.html" />
   </map>
 </p>
  
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">

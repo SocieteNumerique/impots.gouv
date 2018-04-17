@@ -12,20 +12,38 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img2017/2_annexes.JPG" width="957" height="484" usemap="#Map" border="0" />
+<p><img src="img/2_annexe.PNG" usemap="#Map" border="0" />
   <map name="Map" id="Map">
-    <area shape="rect" coords="747,127,935,162" href="../../aide/aide.html" target="_blank" />
-    <area shape="rect" coords="853,434,944,481" href="page3.html" />
-    <area shape="rect" coords="9,125,171,168" href="page1.html" />
+    <area shape="rect" coords="731,138,919,173" href="../../aide/aide.html" target="_blank" />
+    <area shape="rect" coords="858,444,924,485" href="page3.html" />
+    <area shape="rect" coords="9,134,171,177" href="page1.html" />
   </map>
 </p>
  
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">

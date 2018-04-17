@@ -12,27 +12,45 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img2017/4_demenagement.JPG" width="956" height="1268" border="0" usemap="#Map" />
+<p><img src="img/4_demenagement.PNG" border="0" usemap="#Map" />
   <map name="Map" id="Map">
-    <area shape="rect" coords="745,127,907,157" href="../../aide/aide.html" target="_blank" alt="Aide" />
-    <area shape="rect" coords="832,317,926,346" href="page5.html" alt="Notice" />
-    <area shape="rect" coords="209,1237,305,1264" href="page3.html" alt="Précédent" />
-    <area shape="rect" coords="7,124,151,163" href="page1.html" alt="Accueil" />
-    <area shape="rect" coords="209,314,303,341" href="page3.html" alt="Précédent" />
-    <area shape="rect" coords="828,1229,933,1276" href="page5.html" />
+    <area shape="rect" coords="746,142,908,172" href="../../aide/aide.html" target="_blank" alt="Aide" />
+    <area shape="rect" coords="826,331,920,360" href="page5.html" alt="Notice" />
+    <area shape="rect" coords="205,1288,301,1315" href="page3.html" alt="Précédent" />
+    <area shape="rect" coords="8,136,152,175" href="page1.html" alt="Accueil" />
+    <area shape="rect" coords="209,329,303,356" href="page3.html" alt="Précédent" />
+    <area shape="rect" coords="836,1283,925,1320" href="page5.html" />
   </map>
 </p>
  
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">
-<div id="texte_cplt">Si l'adresse affichée n'est pas celle de l'usager au 01/01/2017, il doit :</p>
+<div id="texte_cplt">Si l'adresse affichée n'est pas celle de l'usager au 01/01/2018, il doit :</p>
   <ul>
     <li>cocher la case correspondant à sa situation puis,
       <br />
@@ -40,7 +58,7 @@
     <li>cliquer sur &quot;Suivant&quot;.</li>
   </ul>
    <p><strong>Changements d'adresse déjà connus de l'administration :</strong><br />
-     si l'administration a connaissance d'un changement d'adresse en 2016 et/ou en 2017, les cases correspondantes sont précochées. </p></div></div>
+     si l'administration a connaissance d'un changement d'adresse en 2017 et/ou en 2018, les cases correspondantes sont précochées. </p></div></div>
 </div>
 <!-- InstanceEndEditable -->  
 

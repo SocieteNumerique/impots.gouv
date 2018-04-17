@@ -12,26 +12,37 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img2017/12_pacpmr.JPG"  border="0" usemap="#Map" />
-  <map name="Map" id="Map"><area shape="rect" coords="201,1749,314,1779" href="page11.html" alt="Précédent" /><area shape="rect" coords="829,1745,928,1775" href="page13.html" alt="Suivant" />
-  <area shape="rect" coords="738,121,904,164" href="../../aide/aide.html" target="_blank" alt="Aide" /><area shape="rect" coords="6,123,166,163" href="page1.html" alt="Accueil" /><area shape="rect" coords="836,312,925,343" href="page13.html" alt="Suivant" /><area shape="rect" coords="202,315,315,345" href="page11.html" alt="Précédent" />
+<p><img src="img/12_pacpmr.PNG"  border="0" usemap="#Map" />
+  <map name="Map" id="Map"><area shape="rect" coords="939,1895,1025,1927" href="page13.html" alt="Suivant" />
+  <area shape="rect" coords="853,141,1019,184" href="../../aide/aide.html" target="_blank" alt="Aide" /><area shape="rect" coords="7,136,167,176" href="page1.html" alt="Accueil" /><area shape="rect" coords="942,327,1031,358" href="page13.html" alt="Suivant" />
   </map>
 </p>
  
 <!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="EditRegion2" -->
-<div id="option_cplt">
-<div id="cplt">
-<div id="texte_cplt">Dans le cadre de la déclaration préremplie, l'écran est précoché si l'administration a connaissance de revenus concernant l'usager.<br />
-  Si l'usager à d'autres revenus à déclarer, il doit sélectionner les rubriques concernées.<br />
-  Puis cliquer sur &quot;Suivant&quot;.</div></div>
-</div>
-<!-- InstanceEndEditable -->  
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../img/infoI.png" width="50%"/> </button></div>
+<!-- InstanceBeginEditable name="EditRegion2" --><!-- InstanceEndEditable -->  
 
 </body>
 <!-- InstanceEnd --></html>

@@ -12,6 +12,21 @@
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
@@ -21,15 +36,18 @@
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p><img src="img/test1.png" usemap="#MapMapMap" border="0">
+  <p><img src="img/test1_0.png" usemap="#MapMapMap" border="0">
     <map name="MapMapMap" id="MapMapMap">
-      <area shape="rect" coords="294,214,443,235" href="3_test.html" />
-      <area shape="rect" coords="17,149,517,186" href="2_test.html" />
+      <area shape="rect" coords="410,264,605,289" href="3_test.html" />
+      <area shape="rect" coords="15,197,671,236" href="2_test.html" />
     </map> 
-  <img src="img/test1_1.png" border="0"></p>
+  <img src="img/test1_1_1.png" border="0"></p>
 
 
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" --><div id="option_cplt">
 <div id="cplt">
 <div id="texte_cplt">En cas de perte du numéro fiscal ou d'oubli du mot de passe, l'usager doit recopier un texte de reconnaissance qui correspond aux caractères :<br />

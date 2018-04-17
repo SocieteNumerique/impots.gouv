@@ -11,56 +11,72 @@
 #infobulle_num_fiscal_1 
 {
 	position: absolute;
-	left: 159px;
-	top: 114px;
-	height: 151px;
+	left: 147px;
+	top: 260px;
+	height: 67px;
 }
 
 #infobulle_num_fiscal_2 
 {
 	position: absolute;
-	left: 695px;
-	top: 109px;
-	height: 151px;
+	left: 719px;
+	top: 260px;
+	height: 67px;
 }
 
 #infobulle_num_acces 
 {
 	position: absolute;
-	left: 768px;
-	top: 170px;
-	height: 171px;
+	left: 715px;
+	top: 343px;
+	height: 65px;
 	width: 199px;
 }
 #infobulle_RFR 
 {
 	position: absolute;
-	left: 784px;
-	top: 309px;
-	height: 117px;
+	left: 716px;
+	top: 426px;
+	height: 67px;
 	width: 203px;
 }
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="false" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
 <p>
-<img src="img/mire.png" usemap="#Map" border="0" />
+<img src="img/mire_1.jpg" width="1258" usemap="#Map" border="0" />
   <map name="Map" id="Map">
-     <area shape="circle" href="#" coords="237,255,13"  onmouseover="afficher_infobulle('infobulle_num_fiscal_1')" onmouseout="cacher_infobulle('infobulle_num_fiscal_1')"/>
+     <area shape="rect" coords="190,444,350,475" href="2_mire_perte_numfiscal.html"/>
   
-  <area shape="circle" href="#" coords="782,251,13" onmouseover="afficher_infobulle('infobulle_num_fiscal_2')" onmouseout="cacher_infobulle('infobulle_num_fiscal_2')"/>
   
-  <area shape="circle" href="#" coords="846,330,13" onmouseover="afficher_infobulle('infobulle_num_acces')" onmouseout="cacher_infobulle('infobulle_num_acces')"/>
+  <area shape="rect" coords="1093,212,1119,239" href="../aide/PAS/indexAide.html" target="_blank"/>
+  <area shape="rect" coords="549,215,575,242" href="../aide/PAS/indexAide.html" target="_blank"/>
+  <area shape="rect" href="#" coords="668,476,1144,517" onmouseover="afficher_infobulle('infobulle_RFR')" onmouseout="cacher_infobulle('infobulle_RFR')"/>
   
-  <area shape="circle" href="#" coords="859,410,13" onmouseover="afficher_infobulle('infobulle_RFR')" onmouseout="cacher_infobulle('infobulle_RFR')"/>
+  <area shape="rect" href="#" coords="666,391,1148,432" onmouseover="afficher_infobulle('infobulle_num_acces')" onmouseout="cacher_infobulle('infobulle_num_acces')"/>
     
-    <area shape="rect" coords="507,186,533,213" href="../../acces/commun/PAS/indexAide.html" target="_blank" />
-    <area shape="rect" coords="242,396,369,427" href="2_mire_perte_numfiscal.html"/>
+    <area shape="rect" href="#" coords="667,307,1143,346" onmouseover="afficher_infobulle('infobulle_num_fiscal_2')" onmouseout="cacher_infobulle('infobulle_num_fiscal_2')" />
+    <area shape="rect" href="#" coords="115,306,588,349" onmouseover="afficher_infobulle('infobulle_num_fiscal_1')" onmouseout="cacher_infobulle('infobulle_num_fiscal_1')"/>
   </map>
 </p>
 <div id="infobulle_num_fiscal_1" class="infobulle"> <img src="../creation/img/mire_aide1_2_numfiscal.png" alt="" /></div>

@@ -9,17 +9,35 @@
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="../../contacter/messagerie/signaler_chgt_adresse/img/1_page_services.png" usemap="#Map" border="0" />
-    <map name="Map" id="Map"><area shape="rect" coords="823,482,1120,531" href="../../contacter/messagerie/signaler_chgt_adresse/2_mes_echanges.html" target="_self" alt="Vers la messagerie sécurisée"/>
-      <area shape="rect" coords="105,274,349,304" href="../../contacter/messagerie/signaler_chgt_adresse/3_chgt_ad_vide.html" />
+<p><img src="../../contacter/messagerie/signaler_chgt_adresse/img/1_page_services_1.png" width="1235" usemap="#Map" border="0" />
+    <map name="Map" id="Map"><area shape="rect" coords="81,435,345,462" href="../../contacter/messagerie/signaler_chgt_adresse/3_chgt_ad_vide.html"/>
+      <area shape="rect" coords="813,645,1115,697" href="../../contacter/messagerie/signaler_chgt_adresse/2_mes_echanges.html" target="_self" alt="Vers la messagerie sécurisée" />
     </map>
 </p>
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">

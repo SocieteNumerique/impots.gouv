@@ -10,30 +10,48 @@
 <style type="text/css">
 #infobulle_numfiscal {
 	position: absolute;
-	left: 404px;
-	top: 45px;
-	height: 151px;
+	left: 410px;
+	top: 98px;
+	height: 67px;
 }
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p> <img src="img/perte_mdp_saisi.png" usemap="#Map" border="0" />
+<p> <img src="img/perte_mdp_saisi_1.png" usemap="#Map" border="0" />
     <map name="Map" id="Map">
      
-     <area shape="circle" coords="484,183,12" href="../../profil/problemes/commun/img/infobulle-numfiscal.png" onmouseover="afficher_infobulle('infobulle_numfiscal')" onmouseout="cacher_infobulle('infobulle_numfiscal')"/>
+     <area shape="rect" coords="296,146,946,186" href="../../profil/problemes/commun/img/infobulle-numfiscal.png" onmouseover="afficher_infobulle('infobulle_numfiscal')" onmouseout="cacher_infobulle('infobulle_numfiscal')"/>
   
-      <area shape="rect" coords="593,364,670,408" href="4_mire_perte_mdp_confirm.html" />
+      <area shape="rect" coords="577,387,669,437" href="4_mire_perte_mdp_confirm.html" />
     </map>
 </p>
 <div id="infobulle_numfiscal" class="infobulle"> <img src="../creation/img/mire_aide1_2_numfiscal.png" /></div>
 <script src="../../js/infobulle.js">
 </script>
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" --><div id="option_cplt">
 <div id="cplt">
 <div id="texte_cplt">Après avoir saisi son numéro fiscal et recopié les caractères de l'image ou de l'extrait sonore, l'usager doit valider sa demande.</div></div>

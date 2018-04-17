@@ -17,14 +17,35 @@
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 11pt;
 	width: 295px;
-	left: 940px;
-	top: 680px;
+	left: 831px;
+	top: 756px;
 	color: black;
 	border: solid;
 	border-color: #FF6600;
 	background-color: #FFF;
 	padding: 5px 5px 5px 15px;
+	z-index:1;
 }	
+.btn_sanscadre
+{
+	cursor: pointer;
+}
+#fermer
+{
+	position: absolute;
+	left: 1120px;
+	top: 765px;
+	z-index: 2;
+}
+
+#afficher
+{
+	position: absolute;
+	left: 1103px;
+	top: 745px;
+	padding: 5px 5px 5px 15px;
+	display:none;
+}
 
 #cplt
 {
@@ -61,6 +82,11 @@ p {
 	border-radius: 25%;
 }
 
+.btn_sanscadre
+{
+	border:none;
+	background-color:transparent;
+}
 /*style applique a infobulle - est-ce utile ?*/
 /*area
 {

@@ -12,19 +12,37 @@
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img/navigateur.png" alt="" usemap="#Map" border="0" />
+<p><img src="img/navigateur_1.png" alt="" usemap="#Map" border="0" />
   <map name="Map" id="Map">
-    <area shape="rect" coords="195,36,454,58" href="#" onclick="window.open('img/internet_explorer.png','popup','width=600,height=800,top=200,left=250')" alt="vers image site IE"/>
-    <area shape="rect" coords="488,35,593,58" href="#" onclick="window.open('img/autre_navigateur.png','_blank','width=600,height=500,top=200,left=500')"  alt="vers image site autres navigateurs"/>
+    <area shape="rect" coords="182,56,354,77" href="#" onclick="window.open('img/internet_explorer.png','popup','width=600,height=800,top=200,left=250')" alt="vers image site IE"/>
+    <area shape="rect" coords="398,55,503,78" href="#" onclick="window.open('img/autre_navigateur.png','_blank','width=600,height=500,top=200,left=500')"  alt="vers image site autres navigateurs"/>
   </map>
 </p>
 
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">

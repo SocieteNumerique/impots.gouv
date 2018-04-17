@@ -11,83 +11,99 @@
 #infobulle_adresse 
 	{
 	position: absolute;
-	left: 328px;
-	top: 189px;
+	left: 281px;
+	top: 220px;
 	}
 #infobulle_mdp 
 	{
 	position: absolute;
-	left: 275px;
-	top: 323px;
+	left: 87px;
+	top: 246px;
 	}
 #infobulle_numtel 
 	{
 	position: absolute;
-	left: 336px;
-	top: 502px;
+	left: 294px;
+	top: 558px;
 	}
 #infobulle_mesdocs 
 	{
 	position: absolute;
-	left: 509px;
-	top: 158px;
+	left: 537px;
+	top: 184px;
 	}
 #infobulle_madecla 
 	{
 	position: absolute;
-	left: 783px;
-	top: 81px;
+	left: 796px;
+	top: 115px;
 	}
 #infobulle_mesavisIR 
 	{
 	position: absolute;
-	left: 807px;
-	top: 135px;
+	left: 822px;
+	top: 171px;
 	}
 #infobulle_mesavisIL 
 	{
 	position: absolute;
-	left: 780px;
-	top: 173px;
+	left: 784px;
+	top: 212px;
 	}
 #infobulle_pref 
 	{
 	position: absolute;
-	left: 606px;
-	top: 418px;
+	left: 634px;
+	top: 475px;
 	}
 #infobulle_adresse_actuelle 
 	{
 	position: absolute;
-	left: 545px;
-	top: 228px;
+	left: 420px;
+	top: 261px;
 	}
 </style>
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-<p><img src="img/majTEL_2_saisie.png" usemap="#Map" border="0" />
+<p><img src="img/majTEL_2_saisie_1.png" width="1246" usemap="#Map" border="0" />
 </p>
 <map name="Map" id="Map">
-<area shape="circle" href="#" coords="305,218,12" onmouseover="afficher_infobulle('infobulle_adresse')" onmouseout="cacher_infobulle('infobulle_adresse')"/>
-<area shape="circle" href="#" coords="527,257,12" onmouseover="afficher_infobulle('infobulle_adresse_actuelle')" onmouseout="cacher_infobulle('infobulle_adresse_actuelle')" />
-<area shape="circle" href="#" coords="255,344,12" onmouseover="afficher_infobulle('infobulle_mdp')" onmouseout="cacher_infobulle('infobulle_mdp')"/>
-<area shape="circle" href="#" coords="317,521,12" onmouseover="afficher_infobulle('infobulle_numtel')" onmouseout="cacher_infobulle('infobulle_numtel')"/>
-<area shape="circle" href="#" coords="873,218,12" onmouseover="afficher_infobulle('infobulle_mesdocs')" onmouseout="cacher_infobulle('infobulle_mesdocs')"/>
-<area shape="circle" href="#" coords="968,295,12" onmouseover="afficher_infobulle('infobulle_madecla')" onmouseout="cacher_infobulle('infobulle_madecla')"/>
-<area shape="circle" href="#" coords="989,333,12" onmouseover="afficher_infobulle('infobulle_mesavisIR')" onmouseout="cacher_infobulle('infobulle_mesavisIR')"/>
-<area shape="circle" href="#" coords="962,369,12" onmouseover="afficher_infobulle('infobulle_mesavisIL')" onmouseout="cacher_infobulle('infobulle_mesavisIL')"/>
-<area shape="circle" href="#" coords="973,477,12" onmouseover="afficher_infobulle('infobulle_pref')" onmouseout="cacher_infobulle('infobulle_pref')"/>
-     <area shape="rect" coords="128,650,1133,699" href="5_3_maj_TEL_confirm.html" />
+<area shape="rect" coords="70,721,1164,760" href="5_3_maj_TEL_confirm.html"/>
+<area shape="circle" href="#" coords="1001,528,11" onmouseover="afficher_infobulle('infobulle_pref')" onmouseout="cacher_infobulle('infobulle_pref')" />
+<area shape="circle" href="#" coords="973,406,11" onmouseover="afficher_infobulle('infobulle_mesavisIL')" onmouseout="cacher_infobulle('infobulle_mesavisIL')"/>
+<area shape="circle" href="#" coords="1007,367,11" onmouseover="afficher_infobulle('infobulle_mesavisIR')" onmouseout="cacher_infobulle('infobulle_mesavisIR')"/>
+<area shape="circle" href="#" coords="987,329,11" onmouseover="afficher_infobulle('infobulle_madecla')" onmouseout="cacher_infobulle('infobulle_madecla')"/>
+<area shape="circle" href="#" coords="893,243,11" onmouseover="afficher_infobulle('infobulle_mesdocs')" onmouseout="cacher_infobulle('infobulle_mesdocs')"/>
+<area shape="circle" href="#" coords="277,576,11" onmouseover="afficher_infobulle('infobulle_numtel')" onmouseout="cacher_infobulle('infobulle_numtel')"/>
+<area shape="rect" href="#" coords="78,421,287,465" onmouseover="afficher_infobulle('infobulle_mdp')" onmouseout="cacher_infobulle('infobulle_mdp')"/>
+<area shape="circle" href="#" coords="262,243,11" onmouseover="afficher_infobulle('infobulle_adresse')" onmouseout="cacher_infobulle('infobulle_adresse')" />
+ <area shape="circle" href="#" coords="402,286,11" onmouseover="afficher_infobulle('infobulle_adresse_actuelle')" onmouseout="cacher_infobulle('infobulle_adresse_actuelle')"/>
 </map>
 
 <div id="infobulle_adresse" class="infobulle"> <img src="img/gmp_aide1_adresse.png" alt="" />
 </div>
 <div id="infobulle_adresse_actuelle" class="infobulle"><img src="img/infobulle_AE_actuelle.png" alt=""/></div>
+<div id="infobulle_adresse_actuelle" class="infobulle"></div>
 <div id="infobulle_mdp" class="infobulle"> <img src="img/gmp_aide2_mdp.png" alt="" />
 </div>
 <div id="infobulle_numtel" class="infobulle"> <img src="img/gmp_aide3_numtel.png" alt="" />
@@ -106,6 +122,9 @@
 </script>
 
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" --><div id="option_cplt"> <div id="cplt"> <div id="texte_cplt"><strong><em>Modifier ses numéros de téléphone</em></strong><br />
 Après avoir renseigné, modifié ou supprimé ses numéros de téléphone  fixe et/ou portable et s'il ne souhaite pas effectuer d'autres modifications, l'usager valide la mise à jour de ses informations.</div></div>
 </div><!-- InstanceEndEditable -->  

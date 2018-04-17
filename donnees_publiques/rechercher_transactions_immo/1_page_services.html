@@ -9,14 +9,32 @@
 <!-- InstanceBeginEditable name="head" -->
 <!-- InstanceEndEditable -->
 <!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
 </head>
 
 <body onload="centrer_auto()">
 <div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
-<!-- InstanceBeginEditable name="EditRegion3" --><img src="1_page_services.png" usemap="#Map" border="0" />
-<map name="Map" id="Map"><area shape="rect" coords="460,448,781,501" href="2_patrim_usager.html" target="_self"/>
+<!-- InstanceBeginEditable name="EditRegion3" --><img src="1_page_services_1.png" width="1240" usemap="#Map" border="0" />
+<map name="Map" id="Map"><area shape="rect" coords="459,611,788,666" href="2_patrim_usager.html" target="_self"/>
 </map>
 <!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <div id="option_cplt">
 <div id="cplt">
