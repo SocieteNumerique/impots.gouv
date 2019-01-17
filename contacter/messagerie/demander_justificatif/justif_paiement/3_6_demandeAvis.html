@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#infobulle_1 {
+	position: absolute;
+	left: 284px;
+	top: 636px;
+	height: 129px;
+	width: 656px;
+}
+</style>
+
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../../img/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<img src="img/3_6_avis.png" alt="#" usemap="#Map" border="0" />
+<map name="Map" id="Map">
+ <area shape="circle" coords="370,622,9" href="#" onmouseover="afficher_infobulle('infobulle_1')" onmouseout="cacher_infobulle('infobulle_1')"/>
+  <area shape="rect" coords="195,1151,271,1187" href="4_recap.html" />
+</map>
+
+<div id="infobulle_1" class="infobulle"> <img src="../../img_commun/infobulle_type_justif_paiement.png" alt="#" />
+</div>
+
+<script src="../../../../js/infobulle.js">
+
+</script>
+<!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../../img/infoI.png" width="50%"/> </button></div>
+<!-- InstanceBeginEditable name="EditRegion2" -->
+<div id="option_cplt">
+
+<div id="cplt">
+<div id="texte_cplt">Il précise   sa demande et peut ajouter un ou plusieurs documents.
+  <p> Il clique ensuite sur « Valider ». </p>
+</div></div></div>
+<!-- InstanceEndEditable -->  
+
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#infobulle_ref_avis {
+	position: absolute;
+	left: 461px;
+	top: 245px;
+	height: 69px;
+}
+#infobulle_ad_imposition {
+	position: absolute;
+	left: 283px;
+	top: 606px;
+	height: 69px;
+}
+
+</style>
+
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../../img/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<img src="img/3_5.png" alt="#" usemap="#Map" border="0" />
+<map name="Map" id="Map">
+  <area shape="circle" coords="295,538,9" href="#" onmouseover="afficher_infobulle('infobulle_ref_avis')" onmouseout="cacher_infobulle('infobulle_ref_avis')"/>
+<area shape="circle" coords="272,637,9" href="#" onmouseover="afficher_infobulle('infobulle_ad_imposition')" onmouseout="cacher_infobulle('infobulle_ad_imposition')"/>
+
+<area shape="rect" coords="162,894,305,926" href="3_6_demande.html" />
+</map>
+
+<div id="infobulle_ref_avis" class="infobulle"> <img src="../../img_commun/infobulle_ref_avis.png" alt="" />
+</div>
+
+<div id="infobulle_ad_imposition" class="infobulle"> <img src="../../img_commun/infobulle_ad_imposition.png" alt="" />
+</div>
+<script src="../../../../js/infobulle.js">
+</script>
+<!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../../img/infoI.png" width="50%"/> </button></div>
+<!-- InstanceBeginEditable name="EditRegion2" -->
+<div id="option_cplt">
+
+<div id="cplt">
+<div id="texte_cplt">Lorsqu'aucun avis ne peut être sélectionné, l'usager doit saisir les références de l'avis, le montant et l'adresse d'imposition.</div></div>
+</div>
+<!-- InstanceEndEditable -->  
+
+</body>
+<!-- InstanceEnd --></html>

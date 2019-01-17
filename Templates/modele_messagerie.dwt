@@ -39,7 +39,7 @@ a {
 </head>
 
 <body>
-<div id="retour"><a href="../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../img/picto_new/retour.svg">   </object>  </button></a></div>
+<div id="retour"><a href="../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../img/retour.svg">   </object>  </button></a></div>
 <!-- TemplateBeginEditable name="EditRegion3" -->
  
 <p>&nbsp;</p>

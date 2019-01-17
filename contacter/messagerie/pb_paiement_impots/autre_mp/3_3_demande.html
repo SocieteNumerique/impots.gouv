@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#infobulle_choiximpot {
+	position: absolute;
+	left: 279px;
+	top: 490px;
+	height: 69px;
+}
+#infobulle_choixmillesime {
+	position: absolute;
+	left: 369px;
+	top: 556px;
+	height: 69px;
+}
+
+</style>
+
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="false" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../../img/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<img src="img/3_3.png" alt="#" usemap="#Map" border="0" />
+<map name="Map" id="Map">
+
+<area shape="circle" coords="262,503,9" href="#" onmouseover="afficher_infobulle('infobulle_choiximpot')" onmouseout="cacher_infobulle('infobulle_choiximpot')"/>
+<area shape="circle" coords="347,568,9" href="#" onmouseover="afficher_infobulle('infobulle_choixmillesime')" onmouseout="cacher_infobulle('infobulle_choixmillesime')"/>
+
+<area shape="rect" coords="4,579,278,685" href="3_4_demande.html" />
+</map>
+
+<div id="infobulle_choiximpot" class="infobulle"> <img src="../../img_commun/infobulle_choiximpot.gif" alt="" />
+</div>
+
+<div id="infobulle_choixmillesime" class="infobulle"> <img src="../../img_commun/infobulle_choixmillesime.png" alt="" />
+</div>
+<script src="../../../../js/infobulle.js">
+</script>
+<!-- InstanceEndEditable -->
+  
+
+</body>
+<!-- InstanceEnd --></html>

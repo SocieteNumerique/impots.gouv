@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#infobulle_1 {
+	position: absolute;
+	left: 198px;
+	top: 458px;
+	height: 168px;
+}
+#infobulle_motif1 {
+	position: absolute;
+	left: 518px;
+	top: 452px;
+	height: 158px;
+}
+
+#infobulle_motif3 {
+	position: absolute;
+	left: 389px;
+	top: 651px;
+	height: 112px;
+}
+
+#infobulle_motif4 {
+	position: absolute;
+	left: 251px;
+	top: 695px;
+	height: 45px;
+}
+
+
+#infobulle_sursis {
+	position: absolute;
+	left: 164px;
+	top: 1031px;
+	height: 69px;
+}
+</style>
+
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../../img/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<img src="img/3_6.png" alt="#" usemap="#Map" border="0" />
+<map name="Map" id="Map"><area shape="rect" coords="115,532,172,550" href="#" onmouseover="afficher_infobulle('infobulle_1')" onmouseout="cacher_infobulle('infobulle_1')"/>
+
+ <area shape="circle" coords="1041,604,10" href="#" onmouseover="afficher_infobulle('infobulle_motif1')" onmouseout="cacher_infobulle('infobulle_motif1')"/>
+<area shape="circle" coords="367,659,10" href="#" onmouseover="afficher_infobulle('infobulle_motif3')" onmouseout="cacher_infobulle('infobulle_motif3')"/>
+<area shape="circle" coords="228,689,10" href="#" onmouseover="afficher_infobulle('infobulle_motif4')" onmouseout="cacher_infobulle('infobulle_motif4')"/>
+
+  <area shape="circle" coords="222,1017,9" href="#" onmouseover="afficher_infobulle('infobulle_sursis')" onmouseout="cacher_infobulle('infobulle_sursis')"/>
+  <area shape="rect" coords="426,1293,503,1328" href="4_recap.html" />
+</map>
+
+<div id="infobulle_1" class="infobulle"> <img src="../../img_commun/infobulle_ad_saisie.png" alt="" />
+</div>
+<div id="infobulle_motif1" class="infobulle"> <img src="img/infobulle_motif_degrevt.png" alt="" />
+</div>
+<div id="infobulle_motif3" class="infobulle"> <img src="img/infobulle_motif_vacance.png" alt="" />
+</div>
+<div id="infobulle_motif4" class="infobulle"> <img src="img/infobulle_motif_autre.png" alt="" />
+</div>
+<div id="infobulle_sursis" class="infobulle"> <img src="../recla_IR/img/infobulle_sursis.png" alt="" />
+</div>
+<script src="../../../../js/infobulle.js">
+</script>
+<!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../../img/infoI.png" width="50%"/> </button></div>
+<!-- InstanceBeginEditable name="EditRegion2" -->
+<div id="option_cplt">
+
+<div id="cplt">
+<div id="texte_cplt"><p>L'usager précise   sa demande et peut ajouter un ou plusieurs documents.</p>
+  <p>Pour demander un sursis de paiement dans l'attente d'une décision de   l'administration sur l'erreur de calcul de l'impôt,  il doit cocher la case prévue à cet effet. </p>
+  <p> Il clique ensuite sur « Valider ». </p>
+</div></div></div>
+<!-- InstanceEndEditable -->  
+
+</body>
+<!-- InstanceEnd --></html>

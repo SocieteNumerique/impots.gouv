@@ -36,7 +36,7 @@
 </head>
 
 <body onload="centrer_auto()">
-<div id="retour"><a href="../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../img/picto_new/retour.svg">   </object>  </button></a></div>
+<div id="retour"><a href="../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../img/retour.svg">   </object>  </button></a></div>
 <div id="retour_rubriques"><a href="../declarer/2042/avant_pivot/pivot8.html"><button class="bouton_retour"><img src="../img/accueil_pivot.PNG" alt="Retour au choix des rubriques" border="0"/></button></a></div>
 <!-- TemplateBeginEditable name="EditRegion3" -->EditRegion3<!-- TemplateEndEditable -->
 <!-- TemplateBeginIf cond="OptionalRegion1" -->

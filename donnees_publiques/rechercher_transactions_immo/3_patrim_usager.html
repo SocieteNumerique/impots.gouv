@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#liste_type {
+	position: absolute;
+	left: 799px;
+	top: 293px;
+	height: 69px;
+}
+#liste2_type {
+	position: absolute;
+	left: 797px;
+	top: 323px;
+	height: 116px;
+}
+#liste_cercle {
+	position: absolute;
+	left: 1023px;
+	top: 577px;
+	height: 116px;
+}
+</style>
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" --><img src="3_patrim_usager.png" usemap="#Map" border="0" />
+<map name="Map" id="Map">
+
+
+<area shape="rect" coords="996,5,1080,24" href="visite_guidee.pdf" target="_blank" alt="Vers la visite guidée"/>
+<area shape="rect" coords="1082,5,1137,24" href="Aide_en_ligne_Usager.pdf" target="_blank" alt="Vers l'aide"/>
+
+  <area shape="rect" coords="787,267,927,286" href="#" onmouseover="afficher_infobulle('liste_type')" onmouseout="cacher_infobulle('liste_type')"/>
+  <area shape="rect" coords="788,295,877,313" href="#" onmouseover="afficher_infobulle('liste2_type')" onmouseout="cacher_infobulle('liste2_type')"/>
+  <area shape="rect" coords="956,591,1013,613" href="#" onmouseover="afficher_infobulle('liste_cercle')" onmouseout="cacher_infobulle('liste_cercle')"/>
+</map>
+
+<div id="liste_type" class="infobulle"> <img src="liste_type.png" alt="" />
+</div>
+
+<div id="liste2_type" class="infobulle"> <img src="liste2_type.png" alt="" />
+</div>
+
+<div id="liste_cercle" class="infobulle"> <img src="liste_cercle.png" alt="" />
+</div>
+
+<script src="../../js/infobulle.js">
+</script>
+<!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
+<!-- InstanceBeginEditable name="EditRegion2" -->
+<div id="option_cplt">
+<div id="cplt">
+<div id="texte_cplt">Pour plus d'informations sur ce service, consultez l'aide en ligne.</div></div>
+</div>
+<!-- InstanceEndEditable -->  
+
+</body>
+<!-- InstanceEnd --></html>

@@ -2,7 +2,7 @@ La page index est extraite du site impots.gouv.fr
 
 Se rapprocher de Cap Part pour sa maintenance.
 
-Attention : le bouton "Retour" est géré directement sur le fichier indexAide.html
+Attention : le bouton "Retour" est géré directement sur le fichier aide.html
 Ce fichier n'applique pas le modèle "modele_commun_cplt.dwt".
 Si changement du bouton, il faut donc penser à modifier :
 - au niveau du style :

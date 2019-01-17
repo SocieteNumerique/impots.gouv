@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#infobulle_echeancier {
+	position: absolute;
+	left: 326px;
+	top: 568px;
+	height: 69px;
+}
+
+#infobulle_choix_calendrier {
+	position: absolute;
+	left: 121px;
+	top: 704px;
+	height: 69px;
+}
+
+#infobulle_choix_duree {
+	position: absolute;
+	left: 121px;
+	top: 674px;
+	height: 69px;
+}
+#infobulle_origine_diff {
+	position: absolute;
+	left: 275px;
+	top: 717px;
+	height: 69px;
+}
+#infobulle_prelevement {
+	position: absolute;
+	left: 375px;
+	top: 1102px;
+	height: 69px;
+}
+#infobulle_coord_banc {
+	position: absolute;
+	left: 217px;
+	top: 1167px;
+	height: 69px;
+}
+</style>
+
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../../img/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<img src="img/3_6_avis.png" alt="#" usemap="#Map" border="0" />
+<map name="Map" id="Map">
+  <area shape="circle" coords="163,588,9" href="#" onmouseover="afficher_infobulle('infobulle_echeancier')" onmouseout="cacher_infobulle('infobulle_echeancier')"/>
+  <area shape="rect" coords="114,638,230,666" href="#" onmouseover="afficher_infobulle('infobulle_choix_duree')" onmouseout="cacher_infobulle('infobulle_choix_duree')"/>
+  <area shape="rect"coords="112,667,488,696"  href="#" onmouseover="afficher_infobulle('infobulle_choix_calendrier')" onmouseout="cacher_infobulle('infobulle_choix_calendrier')"/>
+  
+<area shape="circle" coords="244,717,9" href="#" onmouseover="afficher_infobulle('infobulle_origine_diff')" onmouseout="cacher_infobulle('infobulle_origine_diff')"/>
+<area shape="circle" coords="343,1112,9" href="#" onmouseover="afficher_infobulle('infobulle_prelevement')" onmouseout="cacher_infobulle('infobulle_prelevement')"/>
+<area shape="circle" coords="173,1178,9" href="#" onmouseover="afficher_infobulle('infobulle_coord_banc')" onmouseout="cacher_infobulle('infobulle_coord_banc')"/>
+
+<area shape="rect" coords="427,1440,505,1474" href="4_recap.html" />
+</map>
+
+
+<div id="infobulle_echeancier" class="infobulle"> <img src="../../img_commun/infobulle_echeancier.png" alt="" />
+</div>
+
+<div id="infobulle_choix_duree" class="infobulle"> <img src="../../img_commun/choix_duree.png" alt="" />
+</div>
+
+<div id="infobulle_choix_calendrier" class="infobulle"> <img src="../../img_commun/choix_calendrier.png" alt="" />
+</div>
+
+
+<div id="infobulle_origine_diff" class="infobulle"> <img src="../../img_commun/infobulle_origine_diff.png" alt="" />
+</div>
+
+<div id="infobulle_prelevement" class="infobulle"> <img src="../../img_commun/infobulle_prelevement.png" alt="" />
+</div>
+
+<div id="infobulle_coord_banc" class="infobulle"> <img src="../../img_commun/infobulle_coord_banc.png" alt="" />
+</div>
+<script src="../../../../js/infobulle.js">
+</script>
+<!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../../img/infoI.png" width="50%"/> </button></div>
+<!-- InstanceBeginEditable name="EditRegion2" -->
+<div id="option_cplt">
+
+<div id="cplt">
+<div id="texte_cplt">Il précise   sa demande et peut ajouter un ou plusieurs documents.
+  <p> Il clique ensuite sur « Valider ». </p>
+</div></div></div>
+<!-- InstanceEndEditable -->  
+
+</body>
+<!-- InstanceEnd --></html>

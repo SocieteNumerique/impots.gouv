@@ -1,0 +1,553 @@
+<div class="modal-header">
+  <button type="button" class="close" aria-label="Fermer" onclick="return false;"><span aria-hidden="true">&times;</span></button>
+  <h2 class="modal-title">Aide</h2>
+</div>
+
+<div class="modal-body" id="sommaireCrop">
+  <div class="form-group">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="sommaire" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Sommaire de l'aide
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="sommaire">
+        <li><a href="#connexion_aide">La connexion par saisie du numéro fiscal et du mot de passe</a></li>
+        <li><a href="#creationCompte">La création d'un espace particulier</a></li>
+        <li><a href="#numeroFiscal">Où trouver mon numéro fiscal</a></li>
+        <li><a href="#numeroTeledeclarant">Où trouver mon numéro d'accès en ligne</a></li>
+        <li><a href="#revenuFiscalReference">Où trouver mon revenu fiscal de référence</a></li>
+        <li><a href="#perduNumFisc">J'ai perdu mon numéro fiscal</a></li>
+        <li><a href="#perduMotDePasse">J'ai perdu mon mot de passe</a></li>
+        <li><a href="#modifierMotDePasse">Comment modifier mon mot de passe</a></li>
+        <li><a href="#modifierAdresseMail">Comment modifier mon adresse électronique</a></li>
+        <li><a href="#servicesDisponibles">Les services disponibles sur mon espace particulier</a></li>
+        <li><a href="#accesPerso">Un accès personnalisé</a></li>
+        <li><a href="#difficultes">Je rencontre des difficultés pour accéder à mon espace particulier</a></li>
+        <li><a href="#perteIdentifiants">Je n'ai pas créé d'espace particulier et j'ai perdu mes 3 identifiants fiscaux</a></li>
+        <li><a href="#conf">Configuration requise</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="connexion_aide" class="well">
+    <h3>La connexion par saisie du numéro fiscal et mot de passe</h3>
+    <p>Pour vous connecter à votre espace particulier, vous devez choisir un mot de passe.</p>
+    <p>
+      Si vous avez validé votre adresse électronique et votre mot de passe en cliquant sur le lien que vous avez reçu,
+      vous devez vous connecter avec votre numéro fiscal et le mot de passe que vous avez précédemment saisis.
+    </p>
+    <p>Il est important de conserver votre numéro fiscal, vous en aurez besoin pour chaque connexion.</p><a href="#sommaire">Retour</a>
+  </div>
+
+  <div id="creationCompte" class="well">
+    <h3>La création d'un espace particulier</h3>
+    <p>Pour créer votre espace, vous devez saisir :
+
+      <ul>
+        <li>votre numéro fiscal,</li>
+        <li>votre numéro d'accès en ligne,</li>
+        <li>votre revenu fiscal de référence.</li>
+      </ul>
+      <p>Ensuite, vous devez choisir votre mot de passe et saisir une adresse électronique que l'administration utilisera pour vous contacter.</p>
+      <p>Afin de valider la procédure de création de votre espace particulier, vous recevez un lien sur lequel vous devez cliquer.</p>
+      <p>
+        Dès lors que vous aurez cliqué sur le lien, votre adresse électronique et votre mot de passe seront validés.
+      </p>
+      <a href="#sommaire">Retour</a></div>
+      <div id="numeroFiscal" class="well">
+        <h3>Mon numéro fiscal</h3>
+        <p>
+          <strong>Votre numéro fiscal est composé de 13 chiffres.</strong> Il figure en haut de la première page de votre
+          dernière déclaration de revenus reçue. Il est particulier et individuel. Chaque membre du foyer fiscal en possède un.
+        </p>
+        <img src="./ressources/images/num_fiscal.png" alt="" class="img-responsive" />
+        <p>
+          Il se trouve aussi sur votre dernier avis d'imposition ou le courrier reçu cette année (si vous
+          avez choisi de ne plus recevoir la version papier de la déclaration de revenus ou si vous êtes un
+          primo-déclarant de 20 ans et plus l'année précédente, et étiez rattaché au foyer fiscal de vos parents).
+        </p><a href="#sommaire">Retour</a></div>
+        <div id="numeroTeledeclarant" class="well">
+
+          <h3>Mon numéro d'accès en ligne</h3>
+          <p>
+            <strong>Votre numéro  d'accès en ligne est composé de 7 chiffres.</strong>
+            Il figure en haut de la première page de votre dernière déclaration de revenus reçue.
+          </p>
+          <img src="./ressources/images/num_acces.png" alt="" class="img-responsive" />
+          <p>
+            Il se trouve aussi sur le courrier reçu cette année si vous avez choisi de ne plus recevoir la version papier de la déclaration
+            de revenus ou si vous êtes un primo-déclarant de 20 ans et plus, et étiez rattaché l'année précédente au foyer fiscal de vos parents.
+          </p>
+          <p>Chaque année, vous êtes titulaire d'un nouveau numéro d'accès en ligne. Saisissez bien le numéro affiché sur la dernière déclaration des revenus reçue.</p>
+          <p>Si vous n'avez pas encore reçu votre déclaration de revenus cette année, vous pouvez utiliser le numéro d'accès en ligne de l'année dernière.</p>
+          <a href="#sommaire">Retour</a>
+        </div>
+        <div id="revenuFiscalReference" class="well">
+          <h3>Mon revenu fiscal de référence</h3>
+          <p>Votre revenu fiscal de référence se trouve sur la page de garde de votre dernier avis d'impôt sur les revenus dans le cadre «Vos références».</p>
+
+          <img src="./ressources/images/rfr.png" alt="" class="img-responsive" />
+
+          <p>
+            Votre revenu fiscal de référence se trouve aussi dans le détail de votre imposition à la rubrique «informations
+            complémentaires» (25), s'il ne figure pas dans le cadre «Vos références» (notamment si vous avez reçu un avis de dégrèvement).
+          </p>
+
+          <img src="./ressources/images/rfr2.gif" alt="" class="img-responsive" />
+
+          <p>Il se trouve également sur votre dernier avis de taxe d'habitation (notamment en l'absence d'avis d'impôt sur le revenu).</p>
+
+          <img src="./ressources/images/rfr_th.gif" alt="" class="img-responsive" />
+
+          <p>Dans certains cas, il peut être égal à 0 (notamment si vous étiez rattaché au foyer fiscal de vos parents).</p>
+          <p>
+            Si vous n'avez jamais déposé de déclaration de revenus et si vous n'étiez pas rattaché au
+            foyer fiscal de vos parents, vous ne pouvez pas accéder à votre espace particulier cette année.
+          </p><a href="#sommaire">Retour</a></div>
+          <div id="perduNumFisc" class="well">
+            <h3>J'ai perdu mon numéro fiscal</h3>
+            <p>
+              Sur l'écran d'authentification, un lien permet de retrouver votre numéro fiscal.
+              Vous devez saisir l'adresse électronique que vous avez saisie pour vos échanges avec la DGFIP,
+              et recopier les caractères apparaissant dans l'image. Vous recevez alors, par courriel, votre numéro fiscal.
+            </p>
+            <a href="#sommaire">Retour</a></div>
+            <div id="perduMotDePasse" class="well">
+              <h3>J'ai perdu mon mot de passe</h3>
+              <p>
+                Sur l'écran d'authentification, un lien permet de renouveler votre mot de passe. Vous saisissez votre numéro
+                fiscal et recopiez les caractères apparaissant dans l'image. Vous recevrez alors un courriel à l'adresse que
+                vous avez indiquée lors de la création de votre accès. Ce lien vous permettra de renouveler votre mot de passe.
+              </p>
+              <a href="#sommaire">Retour</a></div>
+              <div id="modifierMotDePasse" class="well">
+                <h3>Comment modifier mon mot de passe</h3>
+                <p>
+                  Pour modifier votre mot de passe, vous devez vous connecter en saisissant votre numéro fiscal et votre mot de passe.
+                  Vous pourrez ensuite accéder au service Gérer mon profil qui vous permet de modifier votre mot de passe.
+                  Vous devrez saisir l'ancien mot de passe et saisir deux fois le nouveau mot de passe.
+                </p>
+                <a href="#sommaire">Retour</a></div>
+                <div id="modifierAdresseMail" class="well">
+                  <h3>Comment modifier mon adresse électronique</h3>
+                  <p>
+                    Pour modifier votre adresse électronique, vous devez vous connecter en saisissant votre numéro fiscal et votre
+                    mot de passe. Vous pourrez ensuite accéder au service Gérer mon profil qui vous permet de modifier votre adresse
+                    électronique. Un courriel vous sera adressé pour vérifier que vous avez bien accès à cette nouvelle adresse électronique.
+                  </p><br/>
+                  <a href="#sommaire">Retour</a></div>
+
+                  <div id="servicesDisponibles" class="well">
+                    <h3>Les services disponibles sur mon espace particulier</h3>
+                    <p>
+                      Dans votre espace particulier, vous pouvez payer vos impôts, déclarer vos revenus, consulter vos déclarations,
+                      vos avis d'imposition, la situation de vos paiements, des données publiques ou encore effectuer des démarches personnalisées.
+                    </p>
+                    <p>
+                      Le service Gérer mon profil vous permet de gérer votre adresse électronique, votre mot de passe et vos
+                      numéros de téléphone. Vous pouvez également mettre à jour vos options pour la dématérialisation de vos documents.
+                    </p>
+                    <a href="#sommaire">Retour</a></div>
+                    <div id="accesPerso" class="well">
+                      <h3>Un accès personnalisé</h3>
+                      <p>
+                        L'accès à votre espace est personnalisé. Ainsi, chaque membre d'un foyer fiscal
+                        peut accéder aux services en ligne en saisissant son propre numéro fiscal.
+                      </p>
+                      <p>
+                        Chaque membre du foyer fiscal peut effectuer des opérations au nom du foyer fiscal (le paiement de
+                        l'impôt ou la déclaration des revenus) et consulter sa propre situation fiscale personnelle.
+                      </p>
+                      <a href="#sommaire">Retour</a></div>
+                      <div id="difficultes" class="well">
+                        <h3>Je rencontre des difficultés pour accéder à mon espace particulier</h3>
+                        <p>
+                          Après avoir saisi votre numéro fiscal et votre mot de passe, le message suivant s'affiche :<br />
+                          « Les données saisies sont incorrectes. Vérifiez la saisie de vos identifiants ».
+                        </p>
+                        <p>
+                          Après avoir saisi vos 3 identifiants, le message suivant s'affiche :<br />
+                          « Les données saisies sont incorrectes. Vérifiez la saisie de vos identifiants ».
+                        </p>
+                        <p>Nous vous invitons à recommencer et à vérifier la saisie de vos identifiants, en particulier le numéro fiscal.</p>
+                        <p>Nous vous rappelons que pour accéder à votre espace particulier, vous devez :</p>
+                        <ul>
+                          <li>avoir déposé une déclaration des revenus l'année dernière (sur papier ou sur Internet) ;</li>
+                          <li>ou être âgé de plus de 20 ans et avoir été rattaché l'année dernière à la déclaration de vos parents.</li>
+                        </ul>
+                        <p>
+                          Si vos identifiants sont correctement saisis et que le blocage persiste nous vous invitons à contacter
+                          votre centre des Finances Publiques dont les coordonnées figurent sur votre avis d'impôt sur le revenu.
+                        </p>
+                        <a href="#sommaire">Retour</a></div>
+                        <div id="perteIdentifiants" class="well">
+                          <h3>Je n'ai pas créé d'espace particulier et j'ai perdu mes 3 identifiants fiscaux</h3>
+                          <p>
+                            Si vous avez égaré vos documents fiscaux et ne disposez plus d'un des 3 identifiants nécessaires pour créer
+                            votre espace particulier, nous vous invitons à contacter les services de l'administration fiscale.
+                            Vous trouverez leurs coordonnées sur le site <a href="https://www.impots.gouv.fr">www.impots.gouv.fr</a>
+                            en cliquant le bouton « Accéder » sous la rubrique « Contact » de la page Particulier.
+                          </p>
+                          <a href="#sommaire">Retour</a></div>
+
+                          <div id="conf" class="well">
+                            <h3>Configuration requise</h3>
+                            <p>
+                              Si vous rencontrez des difficultés d'utilisation du service, vous pouvez <a href="https://browsehappy.com/?locale=fr_FR">télécharger et installer gratuitement</a>
+                              un navigateur se trouvant dans la liste ci-dessous :
+                            </strong>
+                          </p>
+
+                          <div class="panel-group" id="configuration" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                              <div class="panel-heading text-center" role="tab" id="config_t_1">
+                                <h4 class="panel-title">
+                                  <a role="button" data-toggle="collapse" data-parent="#configuration" href="#config_1" aria-expanded="true" aria-controls="config_1">
+                                    Windows
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="config_1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="config_t_1">
+                                <div class="panel-body">
+
+                                  <table class="table  table-striped">
+                                    <caption  class="sr-only">Configuration requise sous Windows</caption>
+
+                                    <thead class="sr-only">
+                                      <tr>
+                                        <th id="sys">Version de Windows</th>
+                                        <th  id="navig">Navigateur</th>
+                                      </tr>
+                                    </thead>
+
+                                    <tbody>
+                                      <tr>
+                                        <td headers="sys">XP</td>
+                                        <td headers="navig">
+                                          Chrome 49<br>
+                                          Firefox 52
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td headers="sys">Vista</td>
+                                        <td headers="navig">
+                                          Chrome 49<br>
+                                          Firefox 52<br>
+                                          Internet Explorer 9
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td headers="sys">7</td>
+                                        <td headers="navig">
+                                          Firefox 45, 52, 53, 54+<br>
+                                          Chrome 56, 57, 58, 59+<br>
+                                          Internet Explorer 9, 11<br>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td headers="sys">8</td>
+                                        <td headers="navig">
+                                          Firefox 53, 54+<br>
+                                          Chrome 57, 58, 59+<br>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td headers="sys">8.1</td>
+                                        <td headers="navig">
+                                          Internet Explorer 11<br>
+                                          Firefox 52, 53, 54+<br>
+                                          Chrome 56, 57, 58, 59+<br>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td headers="sys">10</td>
+                                        <td headers="navig">
+                                          Internet Explorer 11, Edge 14, 15<br>
+                                          Firefox 52, 53,54+<br>
+                                          Chrome 56, 57, 58, 59+<br>
+                                        </td>
+                                      </tr>
+
+                                    </tbody></table>
+
+
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="panel panel-default">
+                                <div class="panel-heading text-center" role="tab" id="config_t_2">
+                                  <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configuration" href="#config_2" aria-expanded="false" aria-controls="config_2">
+                                      MacOS X
+                                    </a>
+                                  </h4>
+                                </div>
+                                <div id="config_2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="config_t_2">
+                                  <div class="panel-body">
+                                    <table class="table table-striped">
+                                      <caption  class="sr-only">Configuration requise sous MacOS</caption>
+
+                                      <thead class="sr-only">
+                                        <tr>
+                                          <th id="sys1">Version de MacOS</th>
+                                          <th  id="navig1">Navigateur</th>
+                                        </tr>
+                                      </thead>
+
+                                      <tbody>
+                                        <tr>
+                                          <td headers="sys1">10.6</td>
+                                          <td headers="navig1">
+                                            Chrome 49
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td headers="sys">10.9</td>
+                                          <td headers="navig1">
+                                            Chrome 57, 58, 59+<br>
+                                            Firefox 53, 54+<br>
+                                            Safari 9
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td headers="sys1">10.10</td>
+                                          <td headers="navig1">
+                                            Chrome 57, 58, 59+<br>
+                                            Firefox 53, 54+<br>
+                                            Safari 9, 10
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td headers="sys1">10.11</td>
+                                          <td headers="navig1">
+                                            Chrome 57, 58, 59+<br>
+                                            Firefox 52, 53, 54+<br>
+                                            Safari 9, 10
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td headers="sys1">10.12</td>
+                                          <td headers="navig1">
+                                            Chrome 57, 58, 59+<br>
+                                            Firefox 52, 53, 54+<br>
+                                            Safari 10
+                                          </td>
+                                        </tr>
+
+                                      </tbody></table>
+
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                                <div class="panel panel-default">
+                                  <div class="panel-heading text-center" role="tab" id="config_t_3">
+                                    <h4 class="panel-title">
+                                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configuration" href="#config_3" aria-expanded="false" aria-controls="config_3">
+                                        Linux
+                                      </a>
+                                    </h4>
+                                  </div>
+                                  <div id="config_3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="config_t_3">
+                                    <div class="panel-body">
+
+                                      <table class="table table-striped">
+                                        <caption  class="sr-only">Configuration requise sous Linux</caption>
+
+                                        <thead class="sr-only">
+                                          <tr>
+                                            <th id="sys2">Système d'exploitation</th>
+                                            <th id="navig2">Navigateur</th>
+                                          </tr>
+                                        </thead>
+
+                                        <tbody>
+                                          <tr>
+                                            <td headers="sys2">Linux </td>
+                                            <td headers="navig2">
+                                              Chrome 58, 59<br>
+                                              Firefox 45, 52, 53, 54+
+                                            </td>
+                                          </tr>
+                                        </tbody></table>
+
+
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+
+                                  <div class="panel panel-default">
+                                    <div class="panel-heading text-center" role="tab" id="config_t_4">
+                                      <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configuration" href="#config_4" aria-expanded="false" aria-controls="config_4">
+                                          iOS
+                                        </a>
+                                      </h4>
+                                    </div>
+                                    <div id="config_4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="config_t_4">
+                                      <div class="panel-body">
+
+                                        <table class="table table-striped">
+                                          <caption  class="sr-only">Configuration requise sous iOS</caption>
+
+                                          <thead class="sr-only">
+                                            <tr>
+                                              <th id="sys3">Version d'iOS</th>
+                                              <th id="navig3">Navigateur</th>
+                                            </tr>
+                                          </thead>
+
+                                          <tbody>
+
+                                            <tr>
+                                              <td headers="sys3">9.3</td>
+                                              <td headers="navig3">
+                                                Safari 9
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys3">10.0.2</td>
+                                              <td headers="navig3">
+                                                Safari 10
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys3">10.1.1</td>
+                                              <td headers="navig3">
+                                                Safari 10
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys3">10.2</td>
+                                              <td headers="navig3">
+                                                Safari 10
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys3">10.2.1</td>
+                                              <td headers="navig3">
+                                                Safari 10
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys3">10.3.1</td>
+                                              <td headers="navig3">
+                                                Safari 10
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys3">10.3.2</td>
+                                              <td headers="navig3">
+                                                Safari 10
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+
+
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+
+
+                                  <div class="panel panel-default">
+                                    <div class="panel-heading text-center" role="tab" id="config_t_5">
+                                      <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configuration" href="#config_5" aria-expanded="false" aria-controls="config_5">
+                                          Android
+                                        </a>
+                                      </h4>
+                                    </div>
+                                    <div id="config_5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="config_t_5">
+                                      <div class="panel-body">
+
+                                        <table class="table table-striped">
+                                          <caption  class="sr-only">Configuration requise sous Android</caption>
+
+                                          <thead class="sr-only">
+                                            <tr>
+                                              <th id="sys4">Version d'Android</th>
+                                              <th id="navig4">Navigateur</th>
+                                            </tr>
+                                          </thead>
+
+                                          <tbody>
+
+                                            <tr>
+                                              <td headers="sys4">4.1</td>
+                                              <td headers="navig4">
+                                                Chrome 57, 58<br>
+                                                Navigateur Android
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys4">4.4</td>
+                                              <td headers="navig4">
+                                                Chrome 57, 58<br>
+                                                Navigateur Android
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys4">5</td>
+                                              <td headers="navig4">
+                                                Chrome 57, 58
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys4">5.1</td>
+                                              <td headers="navig4">
+                                                Chrome 56, 57, 58<br>
+                                                Samsung 3.3
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys4">6</td>
+                                              <td headers="navig4">
+                                                Chrome 56, 57, 58<br>
+                                                Samsung 4.0, 5.0, 5.4
+                                              </td>
+                                            </tr>
+
+                                            <tr>
+                                              <td headers="sys4">7</td>
+                                              <td headers="navig4">
+                                                Chrome 57, 58<br>
+                                                Samsung 5
+                                              </td>
+                                            </tr>
+
+                                          </tbody>
+
+                                        </table>
+
+
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+
+
+                                <a href="#sommaire">Retour</a>
+                              </div>
+
+                            </div><!-- fin modal-body -->
+
+                            <div id="helpFooter" class="modal-footer">
+                              <a href="#" onclick="return false;">Fermer</span></a>
+                            </div><!-- fin modal-footer -->

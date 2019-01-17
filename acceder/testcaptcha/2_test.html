@@ -11,9 +11,9 @@
 #infobulle_perte_numfiscal 
 {
 	position: absolute;
-	left: 159px;
-	top: 91px;
-	height: 198px;
+	left: 510px;
+	top: 211px;
+	height: 105px;
 }
 </style>
 <!-- InstanceEndEditable -->
@@ -36,20 +36,19 @@
 </head>
 
 <body onload="centrer_auto()">
-<div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/picto_new/retour.svg">   </object>  </button></a></div>
+<div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/retour.svg">   </object>  </button></a></div>
 <!-- InstanceBeginEditable name="EditRegion3" -->
 <div id="bloc" align="center"> 
+<p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p><img src="img/test2_1.png" usemap="#Map" border="0" />
-    <map name="Map" id="Map">
-      <area shape="rect" coords="2,98,667,150" href="#" onmouseover="afficher_infobulle('infobulle_perte_numfiscal')" onmouseout="cacher_infobulle('infobulle_perte_numfiscal')"/>
-    </map>
-  </p>
-  <div id="infobulle_perte_numfiscal" class="infobulle"> <img src="../numfiscalperdu/img/perte_numfiscal_infobulle_adresse.png" alt="" /></div>
-</div>
+ <p> <img src="img/2_test.png" usemap="#Map" border="0" />
+   <map name="Map" id="Map">
+     <area shape="rect" coords="14,116,671,148" href="#" onmouseover="afficher_infobulle('infobulle_perte_numfiscal')" onmouseout="cacher_infobulle('infobulle_perte_numfiscal')"/>
+  </map> </p>    
+<div id="infobulle_perte_numfiscal" class="infobulle"> <img src="../numfiscalperdu/img/infobulle_perte_numfiscal_adresse.png" alt="" /></div>
+</div> 
 <script src="../../js/infobulle.js">
 </script>
 
@@ -57,14 +56,11 @@
 
 <div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../img/fermer.png" id="img_fermer"/></button></div>
 <div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../img/infoI.png" width="50%"/> </button></div>
-<!-- InstanceBeginEditable name="EditRegion2" -->
-<div id="option_cplt">
+<!-- InstanceBeginEditable name="EditRegion2" -->  <div id="option_cplt">
 <div id="cplt">
-<div id="texte_cplt"><strong><em>Test de reconnaissance « image »</em></strong><br>
-    L'usager saisit les caractères correspondants  : combinaison de lettres en minuscules et de chiffres (exemple : dm3u61).<br>
-  Si besoin, il est possible de visualiser une autre image en cliquant sur le lien «&nbsp;Changer d'image ».</div></div>
-</div>
-<!-- InstanceEndEditable -->  
+<div id="texte_cplt"> Il saisit la combinaison de lettres minuscules et de chiffres (exemple : dm3u61).<br />
+  Si besoin, il peut réécouter l'extrait sonore ou   visualiser une autre image en cliquant sur les liens correspondants.</div></div>
+</div><!-- InstanceEndEditable -->  
 
 </body>
 <!-- InstanceEnd --></html>
