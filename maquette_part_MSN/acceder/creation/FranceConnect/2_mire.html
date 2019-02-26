@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#infobulle_franceconnect {
+	position: absolute;
+	left: 412px;
+	top: 456px;
+	height: 28px;
+	width: 182px;
+}
+#infobulle_continuer {
+	position: absolute;
+	left: 180px;
+	top: 372px;
+	height: 44px;
+	width: 301px;
+}
+
+</style>
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="true" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../../img/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<p>
+<img src="img/2_Particuliers_authentification.png" usemap="#Map" border="0" />
+  <map name="Map" id="Map">
+
+      <area shape="rect" coords="263,306,366,363" href="#" onmouseover="afficher_infobulle('infobulle_continuer')" onmouseout="cacher_infobulle('infobulle_continuer')" />
+
+    <area shape="rect" coords="209,396,416,460" href="3_choix_fournisseur_id.html" onmouseover="afficher_infobulle('infobulle_franceconnect')" onmouseout="cacher_infobulle('infobulle_franceconnect')" alt="S'identifier avec FranceConnect"/>
+
+    <area shape="rect" coords="202,460,421,478" href="https://app.franceconnect.gouv.fr/en-savoir-plus" alt="Qu'est-ce que FranceConnect" />
+  </map>
+</p>
+
+<div id="infobulle_continuer" class="infobulle"> <img src="../../connexion/img/infobulle_continuer.png" alt="#" /></div>
+
+<div id="infobulle_franceconnect" class="infobulle"> <img src="../../connexion/img/infobulle_franceconnect.png" alt="#" /></div>
+
+<script src="../../../js/infobulle.js">
+</script>
+
+<!-- InstanceEndEditable -->
+
+<div id="fermer"><button class="btn_sanscadre" onclick="fermer()"> <img src="../../../img/fermer.png" id="img_fermer"/></button></div>
+<div id="afficher"><button class="btn_sanscadre" onclick="afficher()"><img src="../../../img/infoI.png" width="50%"/> </button></div>
+<!-- InstanceBeginEditable name="EditRegion2" -->
+<div id="option_cplt">
+
+<div id="cplt">
+<div id="texte_cplt">Le service FranceConnect offre la possibilité aux usagers connus de notre système d'information (au titre de l'IR, TH, TF ou IFI) d'accéder aux services en ligne sans être dans l'obligation de s'identifier auprès d'un agent du centre des Finances publiques.</div></div>
+</div>
+<!-- InstanceEndEditable -->
+
+</body>
+<!-- InstanceEnd --></html>

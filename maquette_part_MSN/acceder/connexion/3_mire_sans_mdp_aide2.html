@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#infobulle_franceconnect {
+	position: absolute;
+	left: 403px;
+	top: 577px;
+	height: 28px;
+	width: 182px;
+}
+</style>
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="false" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<p>
+<img src="img/Particuliers_connexion_sans_mdp_aide2.png" usemap="#Map" border="0" />
+  <map name="Map" id="Map">
+    <area shape="rect" coords="59,374,577,424" href="4_mire_connexion.html" alt="Saisie du numéro fiscal" />
+  
+  <area shape="rect" coords="217,505,418,567" href="#" onmouseover="afficher_infobulle('infobulle_franceconnect')" onmouseout="cacher_infobulle('infobulle_franceconnect')"/>
+  
+  <area shape="rect" coords="624,235,886,266" href="3_mire_sans_mdp_aide1.html" alt="Aide : Vous avez oublié votre mot de passe" />
+  
+    <area shape="rect" coords="624,266,924,291" href="3_mire_sans_mdp.html" alt="Fermeture aide : Comment modifier votre mot de passe" />
+    
+       <area shape="rect" coords="622,399,985,426" href="3_mire_sans_mdp_aide3.html" alt="Aide : les services disponibles sur votre espace particulier" />
+    
+  <area shape="rect" coords="621,428,776,453" href="3_mire_sans_mdp_aide4.html" alt="Aide : gestion des cookies" />
+    
+  </map>
+</p>
+
+<div id="infobulle_franceconnect" class="infobulle"> <img src="img/infobulle_franceconnect.png" alt="#" /></div>
+
+<script src="../../js/infobulle.js">
+</script>
+
+<!-- InstanceEndEditable -->
+  
+
+</body>
+<!-- InstanceEnd --></html>

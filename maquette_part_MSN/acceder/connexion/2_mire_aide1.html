@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/modele_commun_cplt.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="../../css/style_modele_commun_cplt.css" rel="stylesheet" type="text/css">
+<title>Maquette des démarches en ligne des usagers particuliers</title>
+<!-- InstanceBeginEditable name="doctitle" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+#infobulle_franceconnect {
+	position: absolute;
+	left: 412px;
+	top: 456px;
+	height: 28px;
+	width: 182px;
+}
+#infobulle_continuer {
+	position: absolute;
+	left: 180px;
+	top: 372px;
+	height: 44px;
+	width: 301px;
+}
+
+</style>
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="OptionalRegion1" type="boolean" value="false" -->
+<script>
+	function afficher()
+	{
+		document.getElementById("option_cplt").style.display="inline"
+		document.getElementById("fermer").style.display="inline"
+		document.getElementById("afficher").style.display="none"
+	}
+
+	function fermer()
+	{
+		document.getElementById("option_cplt").style.display="none"
+		document.getElementById("fermer").style.display="none"
+		document.getElementById("afficher").style.display="inline"
+	}
+</script>
+</head>
+
+<body onload="centrer_auto()">
+<div id="retour"><a href="../../index.html" alt="Retour à la page d'index"><button class="bouton_retour"><object data="../../img/retour.svg">   </object>  </button></a></div>
+<!-- InstanceBeginEditable name="EditRegion3" -->
+<p>
+<img src="img/Particuliers_authentification_aide1.png" usemap="#Map" border="0" />
+  <map name="Map" id="Map">
+    
+    <area shape="rect" coords="56,258,574,308" href="3_mire.html" alt="Saisie du numéro fiscal" />
+  
+      <area shape="rect" coords="265,306,368,363" href="#" onmouseover="afficher_infobulle('infobulle_continuer')" onmouseout="cacher_infobulle('infobulle_continuer')" />
+  
+    <area shape="rect" coords="215,396,416,458" href="#" onmouseover="afficher_infobulle('infobulle_franceconnect')" onmouseout="cacher_infobulle('infobulle_franceconnect')"/>
+  
+  <area shape="rect" coords="623,237,850,266" href="2_mire.html" alt="Fermer l'aide : où trouver votre numéro fiscal" />
+  
+   <area shape="rect" coords="625,600,925,625" href="2_mire_aide2.html" alt="Aide : vous n'avez pas encore de numéro fiscal" />
+  
+      <area shape="rect" coords="626,650,989,677" href="2_mire_aide3.html" alt="Aide : les services disponibles sur votre espace particulier" />
+    
+  <area shape="rect" coords="625,681,780,706" href="2_mire_aide4.html" alt="Aide : gestion des cookies" />
+
+  </map>
+</p>
+
+<div id="infobulle_continuer" class="infobulle"> <img src="img/infobulle_continuer.png" alt="#" /></div>
+ 
+<div id="infobulle_franceconnect" class="infobulle"> <img src="img/infobulle_franceconnect.png" alt="#" /></div>
+ 
+<script src="../../js/infobulle.js">
+</script>
+
+<!-- InstanceEndEditable -->
+  
+
+</body>
+<!-- InstanceEnd --></html>
